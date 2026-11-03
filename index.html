@@ -25,7 +25,16 @@
       background: var(--ink);
       font-family: Arial, Helvetica, sans-serif;
       overflow-x: hidden;
+      cursor: crosshair;
     }
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: 20; pointer-events: none;
+      opacity: .055; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      mix-blend-mode: screen;
+    }
+    .progress { position: fixed; z-index: 30; inset: 0 auto auto 0; width: 0; height: 3px; background: var(--signal); box-shadow: 0 0 18px rgba(153,27,27,.8); }
+    .cursor { position: fixed; z-index: 31; width: 18px; height: 18px; border: 1px solid var(--signal); border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); transition: width .2s, height .2s, background .2s; mix-blend-mode: difference; }
+    .cursor.active { width: 52px; height: 52px; background: var(--paper); }
     a { color: inherit; text-decoration: none; }
     .mono { font: 12px/1.5 "SFMono-Regular", Consolas, monospace; letter-spacing: .08em; }
     .shell { max-width: 1180px; margin: auto; padding: 24px; }
@@ -43,7 +52,12 @@
     }
     .hero {
       min-height: 76vh; display: grid; align-items: end;
-      padding: 13vh 0 8vh; position: relative; overflow: hidden;
+      padding: 13vh 0 8vh; position: relative; overflow: hidden; isolation: isolate;
+    }
+    .hero::before {
+      content: "01"; position: absolute; right: 4%; top: 16%; z-index: -1;
+      color: #18181b; font: 900 clamp(12rem, 34vw, 32rem)/.7 Arial Black, Arial;
+      letter-spacing: -.12em; animation: drift 9s ease-in-out infinite alternate;
     }
     .hero::after {
       content: ""; position: absolute; inset: 20% -20% auto 48%;
@@ -62,6 +76,8 @@
       font-size: clamp(1.05rem, 2vw, 1.4rem); line-height: 1.4;
       animation: rise .9s .25s var(--ease) both;
     }
+    .hero-meta { display: flex; gap: 34px; margin-top: 40px; color: var(--muted); animation: rise .9s .48s var(--ease) both; }
+    .hero-meta strong { display: block; color: var(--paper); font: 900 2rem/1 Arial Black, Arial; letter-spacing: -.08em; }
     .hero-links { display: flex; gap: 12px; margin-top: 28px; animation: rise .9s .38s var(--ease) both; }
     .button {
       border: 1px solid var(--paper); padding: 12px 16px;
@@ -72,18 +88,26 @@
     .button.primary { color: var(--paper); background: var(--signal); border-color: var(--signal); }
     .button.primary:hover { color: var(--signal); background: var(--paper); }
     .section { border-top: 1px solid var(--line); padding: 72px 0; }
-    .section-label { color: var(--signal); margin-bottom: 28px; }
+    .section-label { display: flex; justify-content: space-between; color: var(--signal); margin-bottom: 28px; }
+    .section-label::after { content: "SCROLL TO ACTIVATE"; color: var(--muted); }
     .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); }
     .card {
       min-height: 240px; padding: 24px; background: var(--ink);
       display: flex; flex-direction: column; justify-content: space-between;
       transition: background .35s var(--ease), color .35s var(--ease), transform .35s var(--ease);
+      position: relative; overflow: hidden;
     }
+    .card::after { content: "↗"; position: absolute; right: 20px; bottom: 18px; color: var(--signal); font-size: 1.4rem; transform: translate(10px, 10px); opacity: 0; transition: .35s var(--ease); }
+    .card:hover::after { transform: none; opacity: 1; }
     .card:hover { color: var(--ink); background: var(--paper); transform: translateY(-8px); }
     .card h2 { margin: 30px 0 12px; font-size: 1.6rem; letter-spacing: -.06em; }
     .card p { color: #a1a1aa; line-height: 1.5; }
     .card:hover p { color: #3f3f46; }
     .card .index { color: var(--signal); }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: -8px 0 24px; }
+    .filter { border: 1px solid var(--line); color: var(--muted); background: transparent; padding: 8px 11px; cursor: pointer; transition: .25s var(--ease); }
+    .filter:hover, .filter.active { color: var(--paper); border-color: var(--signal); background: var(--signal); }
+    .project-card.is-hidden { display: none; }
     .manifest { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
     .manifest p { color: #d4d4d8; font-size: 1.2rem; line-height: 1.55; }
     .manifest pre { margin: 0; padding: 24px; border: 1px solid var(--line); color: #d4d4d8; overflow: auto; }
@@ -93,12 +117,15 @@
     @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
     @keyframes slash { from { opacity: 0; transform: rotate(-17deg) translateX(100px); } to { opacity: 1; transform: rotate(-17deg); } }
     @keyframes pulse { 70% { box-shadow: 0 0 0 8px rgba(153, 27, 27, 0); } 100% { box-shadow: 0 0 0 0 rgba(153, 27, 27, 0); } }
+    @keyframes drift { from { transform: translate3d(0,0,0) rotate(-3deg); } to { transform: translate3d(-24px,20px,0) rotate(3deg); } }
     @media (max-width: 760px) {
       .shell { padding: 18px; }
       .hero { min-height: 74vh; padding-top: 18vh; }
       .grid, .manifest { grid-template-columns: 1fr; }
       .card { min-height: 190px; }
-      .hero-links { flex-wrap: wrap; }
+      .hero-links, .hero-meta { flex-wrap: wrap; }
+      .section-label::after { content: ""; }
+      .cursor { display: none; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
@@ -107,6 +134,7 @@
   </style>
 </head>
 <body>
+  <div class="progress"></div><div class="cursor"></div>
   <main class="shell">
     <header class="topbar mono">
       <a class="brand" href="#top">PRAK05 / SYSTEMS IN MOTION</a>
@@ -123,6 +151,11 @@
           <a class="button" href="https://linkedin.com/in/prak05-btech">LINKEDIN</a>
           <a class="button" href="mailto:praksediting5@gmail.com">CONTACT</a>
         </div>
+        <div class="hero-meta mono">
+          <span><strong data-count="16">0</strong>PUBLIC BUILDS</span>
+          <span><strong data-count="4">0</strong>CORE DOMAINS</span>
+          <span><strong data-count="∞">∞</strong>IDEAS IN FLIGHT</span>
+        </div>
       </div>
     </section>
 
@@ -138,11 +171,17 @@
 
     <section class="section reveal">
       <div class="section-label mono">02 / SELECTED OPERATIONS</div>
+      <div class="filters mono" role="group" aria-label="Filter projects">
+        <button class="filter active" data-filter="all">ALL</button>
+        <button class="filter" data-filter="ai">AI / DATA</button>
+        <button class="filter" data-filter="systems">SYSTEMS</button>
+        <button class="filter" data-filter="product">PRODUCT</button>
+      </div>
       <div class="grid">
-        <a class="card" href="https://github.com/prak05/KSERC"><span class="index mono">01 / REGULATE</span><span><h2>KSERC</h2><p>Evidence-grounded regulatory analysis with deterministic financial computation.</p></span></a>
-        <a class="card" href="https://github.com/prak05/SGSSS"><span class="index mono">02 / OPTIMISE</span><span><h2>SGSSS</h2><p>GNN-guided resource-constrained project scheduling and audit.</p></span></a>
-        <a class="card" href="https://github.com/prak05/MediScribe-2.0-clean"><span class="index mono">03 / ASSIST</span><span><h2>MEDISCRIBE</h2><p>Medical retrieval and review workflows with source-aware answers.</p></span></a>
-        <a class="card" href="https://github.com/prak05/AICTE-SMART-IRRIGATION-clean"><span class="index mono">04 / CULTIVATE</span><span><h2>IRRIGATION</h2><p>Sensor-aware recommendations, schedules, and water-use analytics.</p></span></a>
+        <a class="card project-card" data-type="ai" href="https://github.com/prak05/KSERC"><span class="index mono">01 / REGULATE</span><span><h2>KSERC</h2><p>Evidence-grounded regulatory analysis with deterministic financial computation.</p></span></a>
+        <a class="card project-card" data-type="ai" href="https://github.com/prak05/SGSSS"><span class="index mono">02 / OPTIMISE</span><span><h2>SGSSS</h2><p>GNN-guided resource-constrained project scheduling and audit.</p></span></a>
+        <a class="card project-card" data-type="ai" href="https://github.com/prak05/MediScribe-2.0-clean"><span class="index mono">03 / ASSIST</span><span><h2>MEDISCRIBE</h2><p>Medical retrieval and review workflows with source-aware answers.</p></span></a>
+        <a class="card project-card" data-type="product" href="https://github.com/prak05/AICTE-SMART-IRRIGATION-clean"><span class="index mono">04 / CULTIVATE</span><span><h2>IRRIGATION</h2><p>Sensor-aware recommendations, schedules, and water-use analytics.</p></span></a>
       </div>
     </section>
 
@@ -164,6 +203,45 @@ CLOUD    AWS · Bedrock · S3 · IAM</pre>
     </footer>
   </main>
   <script>
+    const progress = document.querySelector(".progress");
+    const cursor = document.querySelector(".cursor");
+    const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    addEventListener("scroll", () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = `${max ? (scrollY / max) * 100 : 0}%`;
+    }, { passive: true });
+    if (!reduceMotion && matchMedia("(pointer: fine)").matches) {
+      addEventListener("pointermove", (event) => {
+        cursor.style.left = `${event.clientX}px`;
+        cursor.style.top = `${event.clientY}px`;
+        document.documentElement.style.setProperty("--mx", `${(event.clientX / innerWidth - .5) * 18}px`);
+        document.documentElement.style.setProperty("--my", `${(event.clientY / innerHeight - .5) * 18}px`);
+      });
+      document.querySelectorAll("a, button").forEach((el) => {
+        el.addEventListener("mouseenter", () => cursor.classList.add("active"));
+        el.addEventListener("mouseleave", () => cursor.classList.remove("active"));
+      });
+    }
+    document.querySelectorAll("[data-count]").forEach((el) => {
+      const target = el.dataset.count;
+      if (target === "∞") return;
+      let value = 0;
+      const timer = setInterval(() => {
+        value += Math.ceil(Number(target) / 12);
+        el.textContent = Math.min(value, Number(target));
+        if (value >= Number(target)) clearInterval(timer);
+      }, 70);
+    });
+    document.querySelectorAll(".filter").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".filter").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        const filter = button.dataset.filter;
+        document.querySelectorAll(".project-card").forEach((card) => {
+          card.classList.toggle("is-hidden", filter !== "all" && card.dataset.type !== filter);
+        });
+      });
+    });
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
