@@ -4,6 +4,8 @@
 
 <br />
 
+<a href="https://prak05.github.io/prak05/"><img src="https://img.shields.io/badge/OPEN_INTERACTIVE_PROFILE-991B1B?style=for-the-badge&logo=googlechrome&logoColor=FAFAF9" alt="Open interactive profile" /></a>
+
 <a href="https://github.com/prak05"><img src="https://img.shields.io/badge/GITHUB-09090B?style=for-the-badge&logo=github&logoColor=FAFAF9" alt="GitHub" /></a>
 <a href="https://linkedin.com/in/prak05-btech"><img src="https://img.shields.io/badge/LINKEDIN-991B1B?style=for-the-badge&logo=linkedin&logoColor=FAFAF9" alt="LinkedIn" /></a>
 <a href="mailto:praksediting5@gmail.com"><img src="https://img.shields.io/badge/CONTACT-27272A?style=for-the-badge&logo=gmail&logoColor=FAFAF9" alt="Email" /></a>
