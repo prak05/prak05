@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/prak-hero.svg" alt="Prakhar Sharma — AI, cloud, software and leadership" width="100%" />
+<img src="./assets/prak-hero.gif" alt="Prakhar Sharma — AI, cloud, software and leadership" width="100%" />
 
 <br />
 
