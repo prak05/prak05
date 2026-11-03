@@ -1,116 +1,133 @@
 <div align="center">
 
-# PRAKHAR SHARMA
+<img src="./assets/prak-hero.svg" alt="Prakhar Sharma — AI, cloud, software and leadership" width="100%" />
 
-### AI systems · software engineering · technical leadership
+<br />
 
-`PRAK / PRAK05` · Trivandrum, Kerala · B.Tech CSE
-
-<a href="https://github.com/prak05">GITHUB</a>
-&nbsp;·&nbsp;
-<a href="https://linkedin.com/in/prak05-btech">LINKEDIN</a>
-&nbsp;·&nbsp;
-<a href="mailto:praksediting5@gmail.com">CONTACT</a>
+<a href="https://github.com/prak05"><img src="https://img.shields.io/badge/GITHUB-09090B?style=for-the-badge&logo=github&logoColor=FAFAF9" alt="GitHub" /></a>
+<a href="https://linkedin.com/in/prak05-btech"><img src="https://img.shields.io/badge/LINKEDIN-991B1B?style=for-the-badge&logo=linkedin&logoColor=FAFAF9" alt="LinkedIn" /></a>
+<a href="mailto:praksediting5@gmail.com"><img src="https://img.shields.io/badge/CONTACT-27272A?style=for-the-badge&logo=gmail&logoColor=FAFAF9" alt="Email" /></a>
 
 </div>
-
----
 
 <div align="center">
 
-## // THE WORK IS THE SIGNAL
+## BUILDING SYSTEMS THAT HOLD UP
 
-**I build practical systems at the intersection of AI, cloud architecture, data, and human-facing software.**
-
-From regulatory analysis and medical retrieval to agricultural intelligence, scheduling algorithms, and developer tooling, my work is designed to be explainable, testable, and useful outside the demo.
+AI engineering, cloud architecture, data products, and software with a visible trail from input to outcome.
 
 </div>
 
----
+<img src="./assets/project-grid.svg" alt="Project areas: regulation, optimisation, medical AI and products" width="100%" />
 
-## 01 / FIELD NOTES
+## / 01 — THE OPERATOR
+
+I am **Prakhar Sharma**, a CSE builder from Trivandrum, Kerala. I work across applied AI, backend systems, optimisation, cloud infrastructure, and technical communities.
 
 ```text
-CURRENT POSITION    AI architect · system programmer · technical builder
-PRIMARY TERRITORY   Python · Java · C · JavaScript · SQL
-SYSTEMS             FastAPI · Streamlit · React · JDBC · Docker
-INTELLIGENCE        RAG · computer vision · optimisation · machine learning
-CLOUD               AWS · Bedrock · S3 · DynamoDB · Textract · IAM
-OPERATING PRINCIPLE Build clearly. Measure honestly. Leave an audit trail.
+BASE        Trivandrum, Kerala, India
+STUDY       B.Tech Computer Science & Engineering
+BUILD       Python · Java · C · JavaScript · SQL
+SYSTEMS     FastAPI · React · Streamlit · JDBC · Docker
+INTELLIGENCE RAG · computer vision · GNNs · optimisation
+CLOUD       AWS · Bedrock · S3 · DynamoDB · Textract · IAM
 ```
 
-> **No theatrical promises.** The interface may be cinematic; the engineering stays grounded.
+## / 02 — THE WORK
 
-## 02 / SELECTED OPERATIONS
+<table>
+<tr>
+<td width="50%" valign="top">
 
-| PROJECT | WHAT IT DOES | SIGNAL |
-|---|---|---|
-| [**KSERC**](https://github.com/prak05/KSERC) | Regulatory truing-up analysis with document extraction, retrieval, deterministic calculations, and AWS/local modes. | `AI` `RAG` `AWS` |
-| [**SGSSS**](https://github.com/prak05/SGSSS) | RCPSP optimisation suite comparing GNN-guided search with classical scheduling baselines. | `OPTIMISATION` `GNN` |
-| [**MediScribe**](https://github.com/prak05/MediScribe-2.0-clean) | Evidence-grounded medical knowledge and clinical workflow tooling. | `RAG` `HEALTH` |
-| [**MedBuddy**](https://github.com/prak05/MedBuddy) | Document-grounded medical study assistant with source-aware answers. | `AI` `EDTECH` |
-| [**KNB BANK**](https://github.com/prak05/Bank-Management-System-JDBC) | Java/JDBC banking application focused on persistence, account operations, and transactional design. | `JAVA` `JDBC` |
-| [**SMART IRRIGATION**](https://github.com/prak05/AICTE-SMART-IRRIGATION-clean) | Sensor-aware irrigation recommendations, schedules, overrides, and water-use analytics. | `ML` `IOT` |
-| [**REPORT HUB**](https://github.com/prak05/ReportHub) | Operational reporting workspace for evidence, status, and review workflows. | `WORKFLOWS` |
-| [**LINKEDIN INDO**](https://github.com/prak05/Linkedin-Indo) | A professional-networking product concept localized for Indian users. | `PRODUCT` `WEB` |
+### [KSERC](https://github.com/prak05/KSERC)
+
+Regulatory analysis for truing-up petitions: document extraction, evidence retrieval, deterministic financial computation, and local/AWS operation.
+
+`FASTAPI` `RAG` `TEXTRACT` `BEDROCK`
+
+</td>
+<td width="50%" valign="top">
+
+### [SGSSS](https://github.com/prak05/SGSSS)
+
+RCPSP optimisation with GNN-guided search, classical baselines, schedule auditing, and explainable result dashboards.
+
+`GNN` `TABU SEARCH` `PSS` `PYTHON`
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### [MEDISCRIBE](https://github.com/prak05/MediScribe-2.0-clean)
+
+Evidence-grounded medical knowledge tooling for retrieval, cited answers, and review-oriented workflows.
+
+`RAG` `FASTAPI` `STREAMLIT`
+
+</td>
+<td width="50%" valign="top">
+
+### [SMART IRRIGATION](https://github.com/prak05/AICTE-SMART-IRRIGATION-clean)
+
+Crop-aware recommendations, sensor states, schedules, manual overrides, and water-use analytics.
+
+`ML` `IOT` `STREAMLIT`
+
+</td>
+</tr>
+</table>
+
+## / 03 — THE STACK
 
 <div align="center">
 
-**[VIEW ALL REPOSITORIES →](https://github.com/prak05?tab=repositories)**
+![Python](https://img.shields.io/badge/PYTHON-09090B?style=flat-square&logo=python&logoColor=FAFAF9&labelColor=991B1B)
+![Java](https://img.shields.io/badge/JAVA-09090B?style=flat-square&logo=openjdk&logoColor=FAFAF9&labelColor=991B1B)
+![FastAPI](https://img.shields.io/badge/FASTAPI-09090B?style=flat-square&logo=fastapi&logoColor=FAFAF9&labelColor=991B1B)
+![React](https://img.shields.io/badge/REACT-09090B?style=flat-square&logo=react&logoColor=FAFAF9&labelColor=991B1B)
+![AWS](https://img.shields.io/badge/AWS-09090B?style=flat-square&logo=amazonaws&logoColor=FAFAF9&labelColor=991B1B)
+![Docker](https://img.shields.io/badge/DOCKER-09090B?style=flat-square&logo=docker&logoColor=FAFAF9&labelColor=991B1B)
+![Linux](https://img.shields.io/badge/LINUX-09090B?style=flat-square&logo=linux&logoColor=FAFAF9&labelColor=991B1B)
 
 </div>
 
-## 03 / TOOL WALL
-
-<div align="center">
-
-![Python](https://img.shields.io/badge/PYTHON-09090B?style=for-the-badge&logo=python&logoColor=F4F1EA&labelColor=991B1B)
-![Java](https://img.shields.io/badge/JAVA-09090B?style=for-the-badge&logo=openjdk&logoColor=F4F1EA&labelColor=991B1B)
-![C](https://img.shields.io/badge/C-09090B?style=for-the-badge&logo=c&logoColor=F4F1EA&labelColor=991B1B)
-![FastAPI](https://img.shields.io/badge/FASTAPI-09090B?style=for-the-badge&logo=fastapi&logoColor=F4F1EA&labelColor=991B1B)
-![React](https://img.shields.io/badge/REACT-09090B?style=for-the-badge&logo=react&logoColor=F4F1EA&labelColor=991B1B)
-![Docker](https://img.shields.io/badge/DOCKER-09090B?style=for-the-badge&logo=docker&logoColor=F4F1EA&labelColor=991B1B)
-![AWS](https://img.shields.io/badge/AWS-09090B?style=for-the-badge&logo=amazonaws&logoColor=F4F1EA&labelColor=991B1B)
-![Linux](https://img.shields.io/badge/LINUX-09090B?style=for-the-badge&logo=linux&logoColor=F4F1EA&labelColor=991B1B)
-
-</div>
-
-## 04 / CURRENT VECTOR
+## / 04 — CURRENT VECTOR
 
 ```yaml
 building:
-  - grounded AI systems with inspectable outputs
-  - local-first software with a clean path to AWS
-  - data products that make decisions easier to audit
+  - grounded AI with inspectable outputs
+  - local-first software with an AWS path
+  - interfaces that make complex work legible
 
 learning:
-  - advanced MLOps and cloud-native architecture
+  - MLOps and cloud-native architecture
   - cybersecurity and systems reliability
   - technical leadership and product communication
 
 open_to:
-  - AI/ML engineering collaborations
-  - open-source systems work
-  - research and applied product opportunities
+  - AI/ML engineering
+  - applied research
+  - open-source collaboration
 ```
 
-## 05 / RECOGNITION
+## / 05 — RECEIPTS
 
-| YEAR | MARK |
+| YEAR | SIGNAL |
 |---:|---|
 | 2023 | Prime Minister's Pariksha Pe Charcha recognition |
 | 2024 | IEEE Human vs AI debate — second position |
-| 2024 | Vidya Sadhnam Linux and ethical-AI guidance |
+| 2024 | Linux and ethical-AI guidance through Vidya Sadhnam |
 | 2016–2024 | Student council and technical community leadership |
-
----
 
 <div align="center">
 
-### CUT THROUGH THE NOISE
+<br />
 
-**Build something useful. Explain how it works. Keep moving.**
+**[ALL REPOSITORIES →](https://github.com/prak05?tab=repositories)**
 
-[![Profile views](https://komarev.com/ghpvc/?username=prak05&color=991B1B&style=flat-square&label=PROFILE+VIEWS)](https://github.com/prak05)
+<br /><br />
+
+![Profile views](https://komarev.com/ghpvc/?username=prak05&color=991B1B&style=flat-square&label=PROFILE+VIEWS)
 
 </div>

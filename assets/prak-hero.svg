@@ -1,0 +1,18 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="420" fill="#09090B"/>
+  <path d="M0 316L1200 32" stroke="#27272A" stroke-width="1"/>
+  <path d="M0 354L1200 70" stroke="#27272A" stroke-width="1"/>
+  <path d="M0 392L1200 108" stroke="#27272A" stroke-width="1"/>
+  <path d="M882 -24L1224 318" stroke="#991B1B" stroke-width="2"/>
+  <path d="M828 -24L1170 318" stroke="#991B1B" stroke-opacity=".45" stroke-width="1"/>
+  <path d="M936 -24L1278 318" stroke="#991B1B" stroke-opacity=".45" stroke-width="1"/>
+  <rect x="54" y="52" width="1092" height="316" stroke="#FAFAF9" stroke-opacity=".28"/>
+  <rect x="74" y="72" width="1052" height="276" stroke="#FAFAF9" stroke-opacity=".1"/>
+  <text x="84" y="112" fill="#991B1B" font-family="monospace" font-size="13" letter-spacing="3">PRAK05 / SYSTEMS IN MOTION</text>
+  <text x="82" y="224" fill="#FAFAF9" font-family="Arial Black, Arial, sans-serif" font-size="104" font-weight="900" letter-spacing="-6">PRAKHAR</text>
+  <text x="86" y="300" fill="#FAFAF9" font-family="Arial Black, Arial, sans-serif" font-size="78" font-weight="900" letter-spacing="-4">SHARMA</text>
+  <text x="88" y="334" fill="#A1A1AA" font-family="monospace" font-size="12" letter-spacing="2">AI / CLOUD / SOFTWARE / LEADERSHIP</text>
+  <circle cx="1054" cy="116" r="31" stroke="#991B1B" stroke-width="2"/>
+  <path d="M1038 116H1070M1054 100V132" stroke="#FAFAF9" stroke-width="2"/>
+  <text x="1041" y="170" fill="#991B1B" font-family="monospace" font-size="11">OPEN</text>
+</svg>
