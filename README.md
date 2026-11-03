@@ -22,6 +22,40 @@ AI engineering, cloud architecture, data products, and software with a visible t
 
 <img src="./assets/project-grid.svg" alt="Project areas: regulation, optimisation, medical AI and products" width="100%" />
 
+## / 01 — THE RECEIPTS
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+### NATIONAL RECOGNITION
+
+Selected for **Pariksha Pe Charcha 2023** — a national platform focused on student voice, learning, and public dialogue.
+
+</td>
+<td width="33%" valign="top">
+
+### TECHNICAL VOICE
+
+**Second position** in an IEEE Human vs AI debate, bringing technical reasoning into a public argument about emerging systems.
+
+</td>
+<td width="33%" valign="top">
+
+### COMMUNITY BUILDER
+
+Technical sessions, Linux and ethical-AI guidance, GitHub Geeks speaking, AWS/cloud learning, and uLearn volunteering.
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+**[VIEW THE PROFESSIONAL PROFILE →](https://www.linkedin.com/in/prak05)**
+
+</div>
+
 ## / 01 — THE OPERATOR
 
 I am **Prakhar Sharma**, a CSE builder from Trivandrum, Kerala. I work across applied AI, backend systems, optimisation, cloud infrastructure, and technical communities.
@@ -113,13 +147,14 @@ open_to:
   - open-source collaboration
 ```
 
-## / 05 — RECEIPTS
+## / 05 — TIMELINE
 
 | YEAR | SIGNAL |
 |---:|---|
 | 2023 | Prime Minister's Pariksha Pe Charcha recognition |
 | 2024 | IEEE Human vs AI debate — second position |
 | 2024 | Linux and ethical-AI guidance through Vidya Sadhnam |
+| 2024–2026 | Project work spanning regulatory AI, medical retrieval, agriculture, optimisation, and developer tooling |
 | 2016–2024 | Student council and technical community leadership |
 
 <div align="center">
