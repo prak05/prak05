@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prakhar Sharma — Cloud-Native & AI Systems Architect</title>
+  <title>Prakhar Sharma — Cloud-Native Systems Engineer &amp; AI Systems Architect</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts: Cabinet Grotesk, JetBrains Mono, Plus Jakarta Sans -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -22,20 +22,25 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['"Cabinet Grotesk"', 'sans-serif'],
+            headline: ['"Anton"', '"Bebas Neue"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
           colors: {
-            canvas: '#080808',
-            surface: '#101014',
-            'surface-hover': '#16161D',
-            subtle: '#1C1C24',
-            'subtle-light': '#262630',
-            accent: '#D4FF00', // High-Voltage Acid Lime (<5% unexpected accent)
-            'accent-muted': 'rgba(212, 255, 0, 0.12)',
-            cyan: '#00F0FF',
-            indigo: '#6366F1',
+            canvas: '#0e0e10',
+            panel: '#151518',
+            surface: '#1c1c20',
+            card: '#222226',
+            borderSubtle: '#2d2d33',
+            redPrimary: '#FF002D',
+            redGlow: 'rgba(255, 0, 45, 0.45)',
+            redDeep: '#74121F',
+            textMain: '#F5F2F0',
+            textMuted: '#A5A5A5',
+          },
+          boxShadow: {
+            'red-glow': '0 0 35px -5px rgba(255, 0, 45, 0.35)',
+            'red-sm': '0 0 15px -2px rgba(255, 0, 45, 0.3)',
           }
         }
       }
@@ -43,763 +48,859 @@
   </script>
 
   <style>
-    /* 32px Coordinate Grid */
-    .bg-grid {
-      background-size: 32px 32px;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-    }
-
-    /* MotionSites Spotlight Effect */
-    .spotlight-card {
-      position: relative;
-      background: #101014;
-      border: 1px solid #1C1C24;
-      overflow: hidden;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .spotlight-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(550px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(212, 255, 0, 0.1), transparent 45%);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    .spotlight-card:hover::before {
-      opacity: 1;
-    }
-    .spotlight-card:hover {
-      border-color: rgba(212, 255, 0, 0.4);
-      transform: translateY(-2px);
-    }
-
-    /* Magnetic Hard-Slide Button */
-    .btn-magnetic {
-      position: relative;
-      overflow: hidden;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn-magnetic .btn-inner-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn-magnetic:hover .btn-inner-primary {
-      transform: translateY(-160%);
-    }
-    .btn-magnetic .btn-inner-hover {
-      position: absolute;
-      top: 100%;
-      left: 0; right: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn-magnetic:hover .btn-inner-hover {
-      transform: translateY(-100%);
-    }
-
-    /* Ambient Audio Waveform Oscillators */
-    @keyframes waveOscillate {
-      0%, 100% { height: 18%; }
-      50% { height: 95%; }
-    }
-    .wave-bar {
-      animation: waveOscillate 1.2s ease-in-out infinite;
-      transform-origin: bottom;
-    }
-    .wave-bar:nth-child(1) { animation-delay: 0.1s; }
-    .wave-bar:nth-child(2) { animation-delay: 0.3s; }
-    .wave-bar:nth-child(3) { animation-delay: 0.05s; }
-    .wave-bar:nth-child(4) { animation-delay: 0.4s; }
-    .wave-bar:nth-child(5) { animation-delay: 0.25s; }
-    .wave-bar:nth-child(6) { animation-delay: 0.5s; }
-    .wave-bar:nth-child(7) { animation-delay: 0.15s; }
-    .wave-bar:nth-child(8) { animation-delay: 0.35s; }
-    .wave-bar:nth-child(9) { animation-delay: 0.2s; }
-    .wave-bar:nth-child(10) { animation-delay: 0.45s; }
-
-    /* Custom Scrollbar */
+    ::selection { background-color: #FF002D; color: #FFFFFF; }
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #080808; }
-    ::-webkit-scrollbar-thumb { background: #262630; }
-    ::-webkit-scrollbar-thumb:hover { background: #D4FF00; }
+    ::-webkit-scrollbar-track { background: #0e0e10; }
+    ::-webkit-scrollbar-thumb { background: #2d2d33; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FF002D; }
+
+    .glow-border:hover {
+      box-shadow: 0 0 25px rgba(255, 0, 45, 0.25);
+      border-color: #FF002D;
+    }
+
+    .diagonal-lines {
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.015),
+        rgba(255, 255, 255, 0.015) 2px,
+        transparent 2px,
+        transparent 14px
+      );
+    }
   </style>
 </head>
-<body class="bg-canvas text-zinc-100 font-sans antialiased selection:bg-accent selection:text-black bg-grid min-h-screen relative overflow-x-hidden">
 
-  <!-- Ambient Top High-Voltage Radial Blur -->
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-accent/5 blur-[160px] pointer-events-none rounded-full -z-10"></div>
+<body class="bg-canvas text-textMain font-sans antialiased selection:bg-redPrimary selection:text-white relative min-h-screen diagonal-lines">
 
-  <!-- Navigation -->
-  <header class="sticky top-0 z-50 backdrop-blur-xl bg-canvas/85 border-b border-subtle">
+  <!-- SOUND SYNTHESIZER (Web Audio API) -->
+  <script>
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let soundEnabled = true;
+
+    function playBeep(freq = 600, type = 'sine', duration = 0.06) {
+      if (!soundEnabled) return;
+      try {
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    function toggleAudio() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById('audioToggle');
+      if (btn) {
+        btn.innerHTML = soundEnabled ? '<i data-lucide="volume-2" class="w-4 h-4 text-redPrimary"></i>' : '<i data-lucide="volume-x" class="w-4 h-4 text-textMuted"></i>';
+        lucide.createIcons();
+      }
+      playBeep(soundEnabled ? 800 : 300, 'triangle', 0.1);
+    }
+  </script>
+
+  <!-- NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 bg-canvas/85 backdrop-blur-md border-b border-borderSubtle">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <span class="w-2.5 h-2.5 rounded-full bg-accent animate-ping"></span>
-        <span class="w-2.5 h-2.5 rounded-full bg-accent -ml-5.5"></span>
-        <a href="#" class="font-mono text-xs tracking-wider uppercase text-zinc-300 font-semibold hover:text-white">
-          prakhar sharma <span class="text-accent">//</span> cse
-        </a>
-      </div>
+      <a href="#hero" class="flex items-center gap-3 group" onclick="playBeep(700)">
+        <div class="relative flex items-center">
+          <div class="w-4 h-4 rounded-full bg-textMuted/70"></div>
+          <div class="w-4 h-4 rounded-full bg-redPrimary -ml-2 group-hover:scale-110 transition-transform"></div>
+        </div>
+        <span class="font-mono font-bold text-sm tracking-wider uppercase text-textMain group-hover:text-redPrimary transition-colors">
+          PRAK05 // ARCHITECT
+        </span>
+      </a>
 
-      <nav class="hidden md:flex items-center gap-8 font-mono text-xs uppercase tracking-wider text-zinc-400">
-        <a href="#architectures" class="hover:text-accent transition-colors">Architectures</a>
-        <a href="#experience" class="hover:text-accent transition-colors">Experience</a>
-        <a href="#leadership" class="hover:text-accent transition-colors">Leadership</a>
-        <a href="#terminal" class="hover:text-accent transition-colors">Console</a>
-        <a href="#stack" class="hover:text-accent transition-colors">Stack</a>
+      <nav class="hidden md:flex items-center gap-8 font-mono text-xs uppercase tracking-widest text-textMuted">
+        <a href="#hero" class="hover:text-redPrimary transition-colors" onclick="playBeep()">Home</a>
+        <a href="#flagships" class="hover:text-redPrimary transition-colors" onclick="playBeep()">Systems</a>
+        <a href="#journey" class="hover:text-redPrimary transition-colors" onclick="playBeep()">Journey</a>
+        <a href="#initiatives" class="hover:text-redPrimary transition-colors" onclick="playBeep()">Movements</a>
+        <a href="#gallery" class="hover:text-redPrimary transition-colors" onclick="playBeep()">Archive</a>
+        <a href="#terminal" class="hover:text-redPrimary transition-colors" onclick="playBeep()">Terminal</a>
       </nav>
 
-      <div class="flex items-center gap-4">
-        <a href="https://github.com/prak05" target="_blank" class="text-zinc-400 hover:text-accent transition-colors">
-          <i data-lucide="github" class="w-4 h-4"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="text-zinc-400 hover:text-accent transition-colors">
-          <i data-lucide="linkedin" class="w-4 h-4"></i>
-        </a>
-        <a href="mailto:prakharsx05@gmail.com" class="btn-magnetic bg-accent text-zinc-950 px-4 py-2 font-mono text-xs rounded-none border border-accent hover:shadow-[0_0_20px_rgba(212,255,0,0.4)]">
-          <span class="btn-inner-primary">Initialize Link <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
-          <span class="btn-inner-hover">Dispatch Email <i data-lucide="mail" class="w-3.5 h-3.5"></i></span>
+      <div class="flex items-center gap-3">
+        <button id="audioToggle" onclick="toggleAudio()" title="Toggle Sound FX" class="p-2 rounded-lg bg-surface border border-borderSubtle hover:border-redPrimary transition-colors">
+          <i data-lucide="volume-2" class="w-4 h-4 text-redPrimary"></i>
+        </button>
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-redPrimary hover:bg-redPrimary/90 text-white font-mono text-xs font-bold tracking-wider uppercase transition-all shadow-red-sm" onclick="playBeep(900)">
+          <span>Dispatch</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="max-w-7xl mx-auto px-6 pt-20 pb-24 border-b border-subtle">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
-      <div class="lg:col-span-8 space-y-6">
-        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-surface border border-subtle">
-          <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-          <span class="font-mono text-[11px] uppercase tracking-widest text-zinc-300">
-            AWS SBGL • Gemini Ambassador • KTU CSE
-          </span>
-        </div>
+  <main class="max-w-7xl mx-auto px-6 space-y-24 py-12">
 
-        <h1 class="font-display text-5xl sm:text-6xl md:text-8xl font-black uppercase tracking-tight text-white leading-[0.92]">
-          Architecting <br>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-zinc-400 to-zinc-600">Resilient Cloud</span> <br>
-          <span class="text-accent underline decoration-subtle decoration-4 underline-offset-8">& AI Systems.</span>
-        </h1>
+    <!-- 00 / HERO CINEMATIC SPOTLIGHT -->
+    <section id="hero" class="relative pt-8 pb-12 overflow-hidden">
+      <!-- Background Ambient Glow Halo -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-redPrimary/20 rounded-full blur-[140px] pointer-events-none"></div>
 
-        <p class="text-lg md:text-xl text-zinc-400 font-normal leading-relaxed max-w-2xl">
-          Cloud-Native Engineer and AI Systems Architect based in India. Specializing in high-throughput distributed inference, verifiable healthcare RAG engines, and event-driven AWS serverless backbones.
-        </p>
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column: Identity, Narrative & Credentials -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-redPrimary/40 text-redPrimary font-mono text-xs uppercase tracking-widest">
+            <span class="w-2 h-2 rounded-full bg-redPrimary animate-ping"></span>
+            Operational Matrix // Kerala, India
+          </div>
 
-        <div class="flex flex-wrap items-center gap-4 pt-4">
-          <a href="#architectures" class="btn-magnetic bg-white text-zinc-950 px-6 py-3 font-mono text-xs rounded-none hover:bg-zinc-200">
-            <span class="btn-inner-primary">Inspect 8 Flagships <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i></span>
-            <span class="btn-inner-hover">Explore Catalog ↘</span>
-          </a>
-          <a href="https://github.com/prak05" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 font-mono text-xs uppercase tracking-wider bg-surface border border-subtle hover:border-accent text-zinc-300 hover:text-white transition-all">
-            <i data-lucide="git-branch" class="w-3.5 h-3.5 text-accent"></i>
-            <span>45 Repositories on GitHub</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Hero Visual HUD / Telemetry Box -->
-      <div class="lg:col-span-4">
-        <div class="spotlight-card p-6 bg-surface border border-subtle font-mono text-xs space-y-5">
-          <div class="flex items-center justify-between pb-3 border-b border-subtle">
-            <span class="text-zinc-500 uppercase tracking-widest text-[10px]">Active Node Status</span>
-            <span class="text-accent text-[11px] font-semibold flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> ONLINE (AP-SOUTH-1)
+          <h1 class="font-headline text-6xl sm:text-7xl lg:text-8xl tracking-tight leading-none text-textMain">
+            PRAKHAR <br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-redPrimary via-[#FF3855] to-textMain">
+              SHARMA
             </span>
+          </h1>
+
+          <p class="font-mono text-xs sm:text-sm text-redPrimary tracking-wider uppercase">
+            Cloud-Native Systems Engineer • AI Systems Architect • Leadership Operator
+          </p>
+
+          <p class="text-textMuted text-base sm:text-lg leading-relaxed max-w-2xl">
+            Undergraduate in Computer Science &amp; Engineering at <b class="text-textMain">Rajadhani Institute of Engineering &amp; Technology (RIET)</b> (Class of 2027). 
+            Guided by duty-driven action from the <i>Bhagavad Gita</i> and instilled with defense discipline, I engineer resilient distributed cloud meshes, clinical RAG architectures, and cultivate high-velocity student developer ecosystems.
+          </p>
+
+          <!-- Core HUD Badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <div class="p-3 rounded-xl bg-panel border border-borderSubtle">
+              <span class="block font-mono text-[10px] text-textMuted uppercase">Statutory Role</span>
+              <span class="font-bold text-sm text-textMain">KSERC Intern</span>
+            </div>
+            <div class="p-3 rounded-xl bg-panel border border-borderSubtle">
+              <span class="block font-mono text-[10px] text-textMuted uppercase">Foundation</span>
+              <span class="font-bold text-sm text-textMain">MuLearn Lead</span>
+            </div>
+            <div class="p-3 rounded-xl bg-panel border border-borderSubtle">
+              <span class="block font-mono text-[10px] text-textMuted uppercase">AWS Campus</span>
+              <span class="font-bold text-sm text-textMain">SBGL RIET</span>
+            </div>
+            <div class="p-3 rounded-xl bg-panel border border-borderSubtle">
+              <span class="block font-mono text-[10px] text-textMuted uppercase">Community</span>
+              <span class="font-bold text-sm text-redPrimary">Vidya Sadhnam</span>
+            </div>
           </div>
 
-          <div class="space-y-3 text-[11px]">
-            <div>
-              <span class="text-zinc-500 block uppercase tracking-wider text-[9px]">Identity</span>
-              <span class="text-white font-medium">Prakhar Sharma</span>
-            </div>
-            <div>
-              <span class="text-zinc-500 block uppercase tracking-wider text-[9px]">Primary Cloud Mesh</span>
-              <span class="text-zinc-200">AWS Bedrock • SageMaker • ECS Fargate</span>
-            </div>
-            <div>
-              <span class="text-zinc-500 block uppercase tracking-wider text-[9px]">Contact & Coordinates</span>
-              <span class="text-zinc-200 flex items-center gap-1.5">
-                <i data-lucide="mail" class="w-3 h-3 text-accent"></i> prakharsx05@gmail.com
-              </span>
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="#flagships" class="px-6 py-3 rounded-full bg-redPrimary hover:bg-redPrimary/90 text-white font-mono text-xs font-bold tracking-wider uppercase transition-all shadow-red-glow flex items-center gap-2" onclick="playBeep(900)">
+              <span>Explore Flagships</span>
+              <i data-lucide="cpu" class="w-4 h-4"></i>
+            </a>
+            <a href="https://github.com/prak05" target="_blank" class="px-6 py-3 rounded-full bg-surface border border-borderSubtle hover:border-redPrimary text-textMain font-mono text-xs font-bold tracking-wider uppercase transition-all flex items-center gap-2" onclick="playBeep(800)">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>GitHub // 45+ Repos</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Dramatic Cinematic Portrait Slot -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-72 sm:w-84 lg:w-96 aspect-square rounded-3xl p-3 bg-gradient-to-b from-redPrimary/40 via-borderSubtle to-panel border-2 border-redPrimary/50 shadow-red-glow group">
+            <div class="w-full h-full rounded-2xl overflow-hidden bg-panel relative flex items-center justify-center">
+              <!-- Actual Cutout Portrait -->
+              <img src="assets/prakhar-profile.jpg" alt="Prakhar Sharma" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.src='assets/hero.svg'" />
               
+              <!-- Rim Glow Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-canvas via-transparent to-transparent opacity-80"></div>
+              
+              <!-- Bottom Card Tag -->
+              <div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-canvas/90 backdrop-blur-md border border-borderSubtle flex items-center justify-between">
+                <div>
+                  <p class="font-bold text-xs text-textMain">Prakhar Sharma</p>
+                  <p class="font-mono text-[10px] text-redPrimary">AICTE ID: STU6633bf927609d1714667410</p>
+                </div>
+                <span class="px-2 py-1 rounded bg-redPrimary/20 text-redPrimary font-mono text-[9px] font-bold">VERIFIED</span>
+              </div>
             </div>
-            <div>
-              <span class="text-zinc-500 block uppercase tracking-wider text-[9px]">Preservation Standard</span>
-              <span class="text-accent font-semibold">Dual-Branch Architecture (Ex / Main)</span>
-            </div>
-          </div>
-
-          <div class="pt-3 border-t border-subtle flex items-center justify-between text-[10px] text-zinc-500">
-            <span>Verified Commit Signatures</span>
-            <span class="text-zinc-300">DeepMind Antigravity</span>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- Section 1: Flagship Systems Bento Grid -->
-  <section id="architectures" class="max-w-7xl mx-auto px-6 py-24 border-b border-subtle">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-      <div>
-        <div class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent mb-2">
-          <span>// Production Systems</span>
+    <!-- 01 / METRICS MATRIX & OPERATIONAL HUD -->
+    <section class="border-y border-borderSubtle py-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="space-y-1">
+          <p class="font-headline text-4xl sm:text-5xl text-textMain">45<span class="text-redPrimary">+</span></p>
+          <p class="font-mono text-xs text-textMuted uppercase tracking-wider">GitHub Repositories</p>
+          <p class="text-[11px] text-textMuted/70">Dual-branch safety (Ex / main)</p>
         </div>
-        <h2 class="font-display text-4xl md:text-5xl font-black uppercase tracking-tight text-white">Flagship Cloud Architectures</h2>
-      </div>
-      <span class="font-mono text-xs uppercase tracking-wider text-zinc-500">8 Modernized Systems Hosted on GitHub</span>
-    </div>
-
-    <!-- Asymmetric Bento Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
-
-      <!-- Card 1: OmniPrice (8 cols) -->
-      <div class="lg:col-span-8 spotlight-card p-8 flex flex-col justify-between group">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 bg-accent-muted text-accent border border-accent/20">Machine Learning</span>
-            <a href="https://github.com/prak05/OmniPrice-ML-Engine" target="_blank" class="text-zinc-500 group-hover:text-accent transition-colors">
-              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-            </a>
-          </div>
-          <h3 class="font-display text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-white group-hover:text-accent transition-colors">
-            OmniPrice ML Engine
-          </h3>
-          <p class="text-zinc-400 text-sm md:text-base leading-relaxed max-w-2xl">
-            Autonomous e-commerce price elasticity optimization engine processing high-dimensional catalog attributes, demand velocities, and market competition signals with sub-50ms inference.
-          </p>
+        <div class="space-y-1">
+          <p class="font-headline text-4xl sm:text-5xl text-redPrimary">TOP 1.1%</p>
+          <p class="font-mono text-xs text-textMuted uppercase tracking-wider">Shell / AICTE Finalist</p>
+          <p class="text-[11px] text-textMuted/70">Top 40 out of 3,668 nationwide</p>
         </div>
-
-        <div class="pt-8 border-t border-subtle/80 mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
-          <div>
-            <span class="text-zinc-500 block text-[10px] uppercase">Serving Architecture</span>
-            <span class="text-zinc-200">AWS SageMaker Serverless</span>
-          </div>
-          <div>
-            <span class="text-zinc-500 block text-[10px] uppercase">Estimator Core</span>
-            <span class="text-zinc-200">LightGBM • XGBoost • PySpark</span>
-          </div>
-          <div>
-            <span class="text-zinc-500 block text-[10px] uppercase">Latency Benchmark</span>
-            <span class="text-accent font-semibold">38ms P99 SLA</span>
-          </div>
+        <div class="space-y-1">
+          <p class="font-headline text-4xl sm:text-5xl text-textMain">600<span class="text-redPrimary">+</span></p>
+          <p class="font-mono text-xs text-textMuted uppercase tracking-wider">Engineers Mentored</p>
+          <p class="text-[11px] text-textMuted/70">MuLearn Alumni Cell &amp; Vidya Sadhnam</p>
+        </div>
+        <div class="space-y-1">
+          <p class="font-headline text-4xl sm:text-5xl text-textMain">150<span class="text-redPrimary">+</span></p>
+          <p class="font-mono text-xs text-textMuted uppercase tracking-wider">AWS CloudCraft Sprints</p>
+          <p class="text-[11px] text-textMuted/70">GenAI Bootcamp Director (SBGL)</p>
         </div>
       </div>
+    </section>
 
-      <!-- Card 2: MediScribe (4 cols with Waveform) -->
-      <div class="lg:col-span-4 spotlight-card p-8 flex flex-col justify-between group bg-surface">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Clinical Ambient AI</span>
-            <a href="https://github.com/prak05/MediScribe-AI-Platform" target="_blank" class="text-zinc-500 group-hover:text-emerald-400 transition-colors">
-              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-            </a>
-          </div>
-          <h3 class="font-display text-2xl font-extrabold uppercase tracking-tight text-white group-hover:text-emerald-400 transition-colors">
-            MediScribe AI Platform
-          </h3>
-          <p class="text-zinc-400 text-sm leading-relaxed">
-            Speech-to-EHR consultation transcription, RxNorm entity extraction, and automated clinical SOAP note compilation via WeasyPrint.
-          </p>
-
-          <!-- Waveform Simulator -->
-          <div class="p-3 bg-canvas border border-subtle rounded-none flex items-center justify-between gap-1.5 h-14">
-            <span class="text-[10px] font-mono text-zinc-500 uppercase">Ambient PCM</span>
-            <div class="flex items-end gap-1 h-8">
-              <span class="w-1 bg-emerald-400 rounded-full wave-bar"></span>
-              <span class="w-1 bg-emerald-400 rounded-full wave-bar"></span>
-              <span class="w-1 bg-emerald-400 rounded-full wave-bar"></span>
-              <span class="w-1 bg-emerald-400 rounded-full wave-bar"></span>
-              <span class="w-1 bg-emerald-400 rounded-full wave-bar"></span>
-              <span class="w-1 bg-emerald-400 rounded-full wave-bar"></span>
-              <span class="w-1 bg-emerald-400 rounded-full wave-bar"></span>
-              <span class="w-1 bg-emerald-400 rounded-full wave-bar"></span>
-              <span class="w-1 bg-emerald-400 rounded-full wave-bar"></span>
-              <span class="w-1 bg-emerald-400 rounded-full wave-bar"></span>
-            </div>
-            <span class="text-[9px] font-mono text-emerald-400 font-semibold">16kHz KMS</span>
-          </div>
-        </div>
-
-        <div class="pt-6 border-t border-subtle/80 mt-6 font-mono text-[11px] text-zinc-400 flex items-center justify-between">
-          <span class="text-zinc-500">Transcribe Medical • Bedrock</span>
-          <span class="text-emerald-400">FastMCP 2.0</span>
-        </div>
-      </div>
-
-      <!-- Card 3: MedBuddy (4 cols) -->
-      <div class="lg:col-span-4 spotlight-card p-8 flex flex-col justify-between group">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 bg-cyan/10 text-cyan border border-cyan/20">Clinical RAG</span>
-            <a href="https://github.com/prak05/MedBuddy-Clinical-RAG" target="_blank" class="text-zinc-500 group-hover:text-cyan transition-colors">
-              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-            </a>
-          </div>
-          <h3 class="font-display text-2xl font-extrabold uppercase tracking-tight text-white group-hover:text-cyan transition-colors">
-            MedBuddy Clinical RAG
-          </h3>
-          <p class="text-zinc-400 text-sm leading-relaxed">
-            Evidence-grounded medical inquiry with hybrid dense vector & BM25 lexical ranking and verifiable guideline citation offsets.
-          </p>
-        </div>
-        <div class="pt-6 border-t border-subtle/80 mt-6 font-mono text-[11px] text-zinc-400 flex items-center justify-between">
-          <span class="text-zinc-500">Bedrock Claude 3.5 • OpenSearch</span>
-          <span class="text-cyan font-semibold">Zero Hallucination</span>
-        </div>
-      </div>
-
-      <!-- Card 4: RetinaScan (4 cols) -->
-      <div class="lg:col-span-4 spotlight-card p-8 flex flex-col justify-between group">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 bg-pink-500/10 text-pink-400 border border-pink-500/20">Computer Vision</span>
-            <a href="https://github.com/prak05/RetinaScan-Diagnostic-AI" target="_blank" class="text-zinc-500 group-hover:text-pink-400 transition-colors">
-              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-            </a>
-          </div>
-          <h3 class="font-display text-2xl font-extrabold uppercase tracking-tight text-white group-hover:text-pink-400 transition-colors">
-            RetinaScan Diagnostic AI
-          </h3>
-          <p class="text-zinc-400 text-sm leading-relaxed">
-            Deep PyTorch fundus image examination screening for diabetic retinopathy stages and macular lesions with TruLens metric logs.
-          </p>
-        </div>
-        <div class="pt-6 border-t border-subtle/80 mt-6 font-mono text-[11px] text-zinc-400 flex items-center justify-between">
-          <span class="text-zinc-500">SageMaker CV • Flutter • S3</span>
-          <span class="text-pink-400 font-semibold">TruLens Verified</span>
-        </div>
-      </div>
-
-      <!-- Card 5: AgriSmart (4 cols) -->
-      <div class="lg:col-span-4 spotlight-card p-8 flex flex-col justify-between group">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">IoT Telemetry</span>
-            <a href="https://github.com/prak05/AgriSmart-Precision-Irrigation" target="_blank" class="text-zinc-500 group-hover:text-emerald-400 transition-colors">
-              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-            </a>
-          </div>
-          <h3 class="font-display text-2xl font-extrabold uppercase tracking-tight text-white group-hover:text-emerald-400 transition-colors">
-            AgriSmart Irrigation
-          </h3>
-          <p class="text-zinc-400 text-sm leading-relaxed">
-            Streaming soil NPK and moisture telemetry through AWS IoT Core to forecast water demand 24-hrs ahead and trigger relay valves.
-          </p>
-        </div>
-        <div class="pt-6 border-t border-subtle/80 mt-6 font-mono text-[11px] text-zinc-400 flex items-center justify-between">
-          <span class="text-zinc-500">IoT Core • Kinesis Firehose • SNS</span>
-          <span class="text-emerald-400 font-semibold">35% Water Saved</span>
-        </div>
-      </div>
-
-      <!-- Card 6: KSERC (6 cols) -->
-      <div class="lg:col-span-6 spotlight-card p-8 flex flex-col justify-between group">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 bg-indigo/10 text-indigo border border-indigo/20">Regulatory Finance AI</span>
-            <a href="https://github.com/prak05/KSERC" target="_blank" class="text-zinc-500 group-hover:text-indigo transition-colors">
-              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-            </a>
-          </div>
-          <h3 class="font-display text-2xl font-extrabold uppercase tracking-tight text-white group-hover:text-indigo transition-colors">
-            KSERC Regulatory Engine
-          </h3>
-          <p class="text-zinc-400 text-sm leading-relaxed">
-            Automated tariff petition analysis and regulatory truing-up audit engine built for the Kerala State Electricity Regulatory Commission.
-          </p>
-        </div>
-        <div class="pt-6 border-t border-subtle/80 mt-6 font-mono text-[11px] text-zinc-400 flex items-center justify-between">
-          <span class="text-zinc-500">Amazon Textract • Bedrock Claude • DynamoDB</span>
-          <span class="text-indigo font-semibold">Linear-Style UI</span>
-        </div>
-      </div>
-
-      <!-- Card 7: OptiSchedule (6 cols) -->
-      <div class="lg:col-span-6 spotlight-card p-8 flex flex-col justify-between group">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 bg-rose-500/10 text-rose-400 border border-rose-500/20">Combinatorial HPC</span>
-            <a href="https://github.com/prak05/OptiSchedule-RCPSP-AI" target="_blank" class="text-zinc-500 group-hover:text-rose-400 transition-colors">
-              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-            </a>
-          </div>
-          <h3 class="font-display text-2xl font-extrabold uppercase tracking-tight text-white group-hover:text-rose-400 transition-colors">
-            OptiSchedule RCPSP AI
-          </h3>
-          <p class="text-zinc-400 text-sm leading-relaxed">
-            Neural-controlled genetic algorithms solving Resource-Constrained Project Scheduling (RCPSP) on distributed AWS Batch clusters.
-          </p>
-        </div>
-        <div class="pt-6 border-t border-subtle/80 mt-6 font-mono text-[11px] text-zinc-400 flex items-center justify-between">
-          <span class="text-zinc-500">AWS Batch • Spot EC2 • S3</span>
-          <span class="text-rose-400 font-semibold">PSPLIB J120 Benchmarked</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Section 2: Experience & Leadership -->
-  <section id="experience" class="max-w-7xl mx-auto px-6 py-24 border-b border-subtle">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-      
-      <!-- Experience Column -->
-      <div class="lg:col-span-6 space-y-8">
+    <!-- 02 / FLAGSHIP SYSTEMS SHOWCASE -->
+    <section id="flagships" class="space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent mb-2">
-            <span>// Industry Practice</span>
-          </div>
-          <h2 class="font-display text-3xl font-extrabold uppercase tracking-tight text-white">Experience & Internships</h2>
+          <span class="font-mono text-xs text-redPrimary uppercase tracking-widest">01 // Engineering Showcase</span>
+          <h2 class="font-headline text-4xl sm:text-5xl text-textMain">MISSION-CRITICAL SYSTEMS</h2>
         </div>
-
-        <div class="space-y-6">
-          <div class="spotlight-card p-6 space-y-2 border-l-2 border-l-accent">
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-white font-bold text-sm">Kerala State Electricity Regulatory Commission</span>
-              <span class="text-accent">2026</span>
-            </div>
-            <span class="font-mono text-xs text-zinc-400 block">AI Regulatory Automation Developer</span>
-            <p class="text-xs text-zinc-400 leading-relaxed pt-1">
-              Engineered the AI Truing-Up Tool using Amazon Textract and Bedrock Mantle to automate tariff petition financial audits, document retrieval, and compliance verification.
-            </p>
-          </div>
-
-          <div class="spotlight-card p-6 space-y-2 border-l-2 border-l-indigo">
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-white font-bold text-sm">AND Intern</span>
-              <span class="text-zinc-400">June – August 2024</span>
-            </div>
-            <span class="font-mono text-xs text-zinc-400 block">Data Science & Machine Learning Intern</span>
-            <p class="text-xs text-zinc-400 leading-relaxed pt-1">
-              Developed high-precision predictive models including credit card fraud detection (imbalance handling via imblearn) and automotive valuation forecasting.
-            </p>
-          </div>
-
-          <div class="spotlight-card p-6 space-y-2 border-l-2 border-l-emerald-500">
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-white font-bold text-sm">Edunet Foundation / IBM SkillsBuild / AICTE</span>
-              <span class="text-zinc-400">August – Dec 2024</span>
-            </div>
-            <span class="font-mono text-xs text-zinc-400 block">AI Cloud & Front-End Developer Intern</span>
-            <p class="text-xs text-zinc-400 leading-relaxed pt-1">
-              Built Fasal Saarthi (crop recommendation engine via Watsonx.ai) and Agri-Smart Pro Irrigation platform with Streamlit and cloud APIs.
-            </p>
-          </div>
-
-          <div class="spotlight-card p-6 space-y-2 border-l-2 border-l-sky-500">
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-white font-bold text-sm">Innovate Intern</span>
-              <span class="text-zinc-400">November 2024</span>
-            </div>
-            <span class="font-mono text-xs text-zinc-400 block">Cloud Computing Intern (Google Cloud Platform)</span>
-            <p class="text-xs text-zinc-400 leading-relaxed pt-1">
-              Architected infrastructure for securing AI/ML workloads on GCP, configuring IAM hierarchies, VPC service perimeters, and encrypted storage buckets.
-            </p>
-          </div>
-        </div>
+        <p class="text-textMuted text-xs font-mono uppercase tracking-wider">Decoupled Architectures • Clinician-First RAG • Predictive ML</p>
       </div>
 
-      <!-- Leadership Column -->
-      <div id="leadership" class="lg:col-span-6 space-y-8">
-        <div>
-          <div class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent mb-2">
-            <span>// Ecosystem & Community</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. OmniPrice ML Engine -->
+        <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all glow-border flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="p-2.5 rounded-xl bg-surface text-redPrimary border border-borderSubtle">
+                <i data-lucide="trending-up" class="w-5 h-5"></i>
+              </span>
+              <span class="font-mono text-[10px] text-redPrimary border border-redPrimary/30 px-2 py-0.5 rounded">38ms P99</span>
+            </div>
+            <h3 class="font-bold text-lg text-textMain group-hover:text-redPrimary transition-colors">OmniPrice ML Engine</h3>
+            <p class="text-xs text-textMuted leading-relaxed">
+              Autonomous pricing elasticity and revenue forecasting engine trained on high-dimensional multi-modal catalog data.
+            </p>
+            <div class="font-mono text-[11px] space-y-1 pt-2 border-t border-borderSubtle">
+              <p><span class="text-textMuted">AWS:</span> SageMaker Serverless, S3 Lake, Lambda</p>
+              <p><span class="text-textMuted">Core:</span> LightGBM, XGBoost, PySpark, FastAPI</p>
+            </div>
           </div>
-          <h2 class="font-display text-3xl font-extrabold uppercase tracking-tight text-white">Leadership & Distinctions</h2>
+          <div class="pt-6 flex items-center justify-between">
+            <a href="https://github.com/prak05/OmniPrice-ML-Engine" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-mono text-redPrimary hover:underline" onclick="playBeep()">
+              <span>View Repository</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
         </div>
 
-        <div class="space-y-6">
-          <div class="spotlight-card p-6 space-y-2">
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-white font-bold text-sm flex items-center gap-2">
-                <i data-lucide="award" class="w-4 h-4 text-accent"></i> AWS Student Builder Group Leader (SBGL)
+        <!-- 2. MediScribe AI Platform -->
+        <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all glow-border flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="p-2.5 rounded-xl bg-surface text-redPrimary border border-borderSubtle">
+                <i data-lucide="stethoscope" class="w-5 h-5"></i>
               </span>
-              <span class="text-accent font-mono text-xs">2026</span>
+              <span class="font-mono text-[10px] text-redPrimary border border-redPrimary/30 px-2 py-0.5 rounded">UST SIGHT 3.0</span>
             </div>
-            <p class="text-xs text-zinc-400 leading-relaxed pt-1">
-              Led the AWS Student Builder Group community at RIET. Directed the CloudCraft 4-day GenAI & Cloud Bootcamp onboarding 150+ student developers onto AWS infrastructure.
+            <h3 class="font-bold text-lg text-textMain group-hover:text-redPrimary transition-colors">MediScribe AI Platform</h3>
+            <p class="text-xs text-textMuted leading-relaxed">
+              Ambient clinical speech-to-EHR transcription pipeline generating structured SOAP notes with zero hallucination.
             </p>
+            <div class="font-mono text-[11px] space-y-1 pt-2 border-t border-borderSubtle">
+              <p><span class="text-textMuted">AWS:</span> Transcribe Medical, Bedrock Claude 3.5, DynamoDB</p>
+              <p><span class="text-textMuted">Core:</span> FastMCP 2.0, Python, WeasyPrint, Next.js</p>
+            </div>
           </div>
-
-          <div class="spotlight-card p-6 space-y-2">
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-white font-bold text-sm flex items-center gap-2">
-                <i data-lucide="sparkles" class="w-4 h-4 text-cyan"></i> Gemini Student Ambassador (GSA)
-              </span>
-              <span class="text-zinc-400 font-mono text-xs">Google</span>
-            </div>
-            <p class="text-xs text-zinc-400 leading-relaxed pt-1">
-              Appointed Google Gemini Student Ambassador representing next-generation multimodal LLM tools, running workshops on prompt engineering and Vertex AI.
-            </p>
-          </div>
-
-          <div class="spotlight-card p-6 space-y-2">
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-white font-bold text-sm flex items-center gap-2">
-                <i data-lucide="users" class="w-4 h-4 text-emerald-400"></i> MuLearn Alumni Cell Lead
-              </span>
-              <span class="text-zinc-400 font-mono text-xs">600+ Engineers</span>
-            </div>
-            <p class="text-xs text-zinc-400 leading-relaxed pt-1">
-              Managed the 600-member GTech MuLearn Alumni Cell across the Kerala region, coordinating peer-led cohort bootcamps and industry speaker series.
-            </p>
-          </div>
-
-          <div class="spotlight-card p-6 space-y-2">
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-white font-bold text-sm flex items-center gap-2">
-                <i data-lucide="globe" class="w-4 h-4 text-pink-400"></i> Founder, Vidya Sadhnam
-              </span>
-              <span class="text-zinc-400 font-mono text-xs">300+ Students</span>
-            </div>
-            <p class="text-xs text-zinc-400 leading-relaxed pt-1">
-              Founded Vidya Sadhnam technical community from zero to 300+ reach, executing large-scale hands-on workshops in web development, Git, and developer workflows.
-            </p>
-          </div>
-
-          <div class="spotlight-card p-6 space-y-2">
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-white font-bold text-sm flex items-center gap-2">
-                <i data-lucide="mic" class="w-4 h-4 text-amber-400"></i> Cultural & Debate Honors
-              </span>
-              <span class="text-zinc-400 font-mono text-xs">Distinction</span>
-            </div>
-            <p class="text-xs text-zinc-400 leading-relaxed pt-1">
-              Winner of the IEEE Techventure 2.0 Debate Competition (April 2026). Classical Indian Veena musician with high-profile performances for the Chief of Western Air Command.
-            </p>
+          <div class="pt-6 flex items-center justify-between">
+            <a href="https://github.com/prak05/MediScribe-AI-Platform" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-mono text-redPrimary hover:underline" onclick="playBeep()">
+              <span>View Repository</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
           </div>
         </div>
+
+        <!-- 3. MedBuddy Clinical RAG -->
+        <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all glow-border flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="p-2.5 rounded-xl bg-surface text-redPrimary border border-borderSubtle">
+                <i data-lucide="shield-alert" class="w-5 h-5"></i>
+              </span>
+              <span class="font-mono text-[10px] text-redPrimary border border-redPrimary/30 px-2 py-0.5 rounded">Ideathon Winner</span>
+            </div>
+            <h3 class="font-bold text-lg text-textMain group-hover:text-redPrimary transition-colors">MedBuddy Clinical RAG</h3>
+            <p class="text-xs text-textMuted leading-relaxed">
+              Grounded medical decision support leveraging hybrid dense + BM25 retrieval over clinical documentation. Winner at Gravity | IEDC-MCET.
+            </p>
+            <div class="font-mono text-[11px] space-y-1 pt-2 border-t border-borderSubtle">
+              <p><span class="text-textMuted">AWS:</span> Bedrock Mantle, OpenSearch Serverless, ECS Fargate</p>
+              <p><span class="text-textMuted">Core:</span> LangChain, Titan Embeddings V2, FastAPI</p>
+            </div>
+          </div>
+          <div class="pt-6 flex items-center justify-between">
+            <a href="https://github.com/prak05/MedBuddy-Clinical-RAG" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-mono text-redPrimary hover:underline" onclick="playBeep()">
+              <span>View Repository</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Agri-Smart Pro -->
+        <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all glow-border flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="p-2.5 rounded-xl bg-surface text-redPrimary border border-borderSubtle">
+                <i data-lucide="sprout" class="w-5 h-5"></i>
+              </span>
+              <span class="font-mono text-[10px] text-redPrimary border border-redPrimary/30 px-2 py-0.5 rounded">Top 1.1% Finalist</span>
+            </div>
+            <h3 class="font-bold text-lg text-textMain group-hover:text-redPrimary transition-colors">Agri-Smart Pro Dashboard</h3>
+            <p class="text-xs text-textMuted leading-relaxed">
+              Smart irrigation prediction engine for 3 farm parcels. Finalist in AICTE &amp; Shell India Skills4Future (Top 40 out of 3,668 developers).
+            </p>
+            <div class="font-mono text-[11px] space-y-1 pt-2 border-t border-borderSubtle">
+              <p><span class="text-textMuted">Stack:</span> MultiOutputClassifier, RandomForest, Streamlit</p>
+              <p><span class="text-textMuted">Integration:</span> OpenWeatherMap Live API, Diagnostics Engine</p>
+            </div>
+          </div>
+          <div class="pt-6 flex items-center justify-between">
+            <a href="https://github.com/prak05/AgriSmart-Precision-Irrigation" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-mono text-redPrimary hover:underline" onclick="playBeep()">
+              <span>View Repository</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Fasal Saarthi: Kushal Kisan -->
+        <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all glow-border flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="p-2.5 rounded-xl bg-surface text-redPrimary border border-borderSubtle">
+                <i data-lucide="database" class="w-5 h-5"></i>
+              </span>
+              <span class="font-mono text-[10px] text-redPrimary border border-redPrimary/30 px-2 py-0.5 rounded">IBM Watson AutoAI</span>
+            </div>
+            <h3 class="font-bold text-lg text-textMain group-hover:text-redPrimary transition-colors">Fasal Saarthi: Kushal Kisan</h3>
+            <p class="text-xs text-textMuted leading-relaxed">
+              7-parameter crop recommendation pipeline (N, P, K, pH, temp, humidity, rainfall) delivering 95%+ confidence crop yield recommendations.
+            </p>
+            <div class="font-mono text-[11px] space-y-1 pt-2 border-t border-borderSubtle">
+              <p><span class="text-textMuted">Platform:</span> IBM watsonx.ai Studio, AutoAI Pipeline</p>
+              <p><span class="text-textMuted">APIs:</span> Multi-language endpoints (Python, Java, JS, Scala)</p>
+            </div>
+          </div>
+          <div class="pt-6 flex items-center justify-between">
+            <a href="https://github.com/prak05/EDUNET-AI-CLOUD-FASAL-SAARTHU-KUSHAL-KISAN" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-mono text-redPrimary hover:underline" onclick="playBeep()">
+              <span>View Repository</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. KSERC Regulatory Truing-Up Tool -->
+        <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all glow-border flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="p-2.5 rounded-xl bg-surface text-redPrimary border border-borderSubtle">
+                <i data-lucide="landmark" class="w-5 h-5"></i>
+              </span>
+              <span class="font-mono text-[10px] text-redPrimary border border-redPrimary/30 px-2 py-0.5 rounded">Govt. Statutory MoU</span>
+            </div>
+            <h3 class="font-bold text-lg text-textMain group-hover:text-redPrimary transition-colors">KSERC Regulatory Audit Engine</h3>
+            <p class="text-xs text-textMuted leading-relaxed">
+              Statutory tariff petition financial audit tool developed for the Kerala State Electricity Regulatory Commission to verify utility truing-up.
+            </p>
+            <div class="font-mono text-[11px] space-y-1 pt-2 border-t border-borderSubtle">
+              <p><span class="text-textMuted">AWS:</span> Amazon Textract, Bedrock Mantle, S3 Lake</p>
+              <p><span class="text-textMuted">Validation:</span> Shri Jose T K IAS (Rtd.) &amp; Shri B. Pradeep</p>
+            </div>
+          </div>
+          <div class="pt-6 flex items-center justify-between">
+            <a href="https://github.com/prak05/KSERC" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-mono text-redPrimary hover:underline" onclick="playBeep()">
+              <span>View Repository</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- Section 3: Interactive CLI Terminal Console -->
-  <section id="terminal" class="max-w-7xl mx-auto px-6 py-24 border-b border-subtle">
-    <div class="flex items-center justify-between mb-8">
+    <!-- 03 / VERIFIED FIELD JOURNEY TIMELINE -->
+    <section id="journey" class="space-y-8">
       <div>
-        <div class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent mb-2">
-          <span>// Live Shell</span>
+        <span class="font-mono text-xs text-redPrimary uppercase tracking-widest">02 // Verified Trajectory</span>
+        <h2 class="font-headline text-4xl sm:text-5xl text-textMain">FIELD EXPERIENCE &amp; APPOINTMENTS</h2>
+      </div>
+
+      <div class="relative pl-6 border-l-2 border-borderSubtle space-y-10">
+
+        <!-- KSERC -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-redPrimary border-4 border-canvas"></div>
+          <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="font-bold text-lg text-textMain">Intern // Kerala State Electricity Regulatory Commission (KSERC)</h3>
+              <span class="font-mono text-xs text-redPrimary">2026 // Statutory MoU</span>
+            </div>
+            <p class="text-xs text-textMuted font-mono mt-1">Formal work order executed between KSERC Board and Rajadhani Institute of Engineering &amp; Technology</p>
+            <p class="text-sm text-textMuted mt-3 leading-relaxed">
+              Presented to Chairman <b>Shri Jose T K IAS (Rtd.)</b>, Commission Member <b>Shri B. Pradeep</b>, and the Board of KSERC. Engineered an automated truing-up tool auditing multi-crore utility financial petitions under mentor Asst. Prof. Akshayraj M.R.
+            </p>
+          </div>
         </div>
-        <h2 class="font-display text-3xl font-extrabold uppercase tracking-tight text-white">Interactive System Console</h2>
-      </div>
-      <span class="font-mono text-xs text-zinc-500 uppercase">Type 'help' for commands</span>
-    </div>
 
-    <!-- Terminal Window -->
-    <div class="spotlight-card border border-subtle bg-canvas font-mono text-xs">
-      <!-- Title Bar -->
-      <div class="bg-surface px-4 py-3 border-b border-subtle flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
-          <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-          <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-          <span class="text-zinc-500 text-[11px] ml-2">prak05@mesh-gateway: ~</span>
+        <!-- MuLearn Partner Engagement -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-surface border-4 border-canvas group-hover:bg-redPrimary transition-colors"></div>
+          <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="font-bold text-lg text-textMain">Partner Engagement Intern // MuLearn Foundation</h3>
+              <span class="font-mono text-xs text-textMuted">6 Months Duration</span>
+            </div>
+            <p class="text-xs text-textMuted font-mono mt-1">Under leadership of Deepu S Nath &amp; Sachin Raj M</p>
+            <p class="text-sm text-textMuted mt-3 leading-relaxed">
+              Architected statewide engagement frameworks, onboarded institutional chapters, and bridged engineering cohorts with industry leaders at events like <b>Olympus: The HR Icon</b> (CareStack Technopark) and <b>MUTATE '26</b>.
+            </p>
+          </div>
         </div>
-        <span class="text-[10px] text-zinc-600 uppercase">bash 5.2.21</span>
-      </div>
 
-      <!-- Output Screen -->
-      <div id="terminal-screen" class="p-6 space-y-3 min-h-[260px] max-h-[380px] overflow-y-auto text-zinc-300">
-        <div class="text-zinc-500">Prakhar Sharma Cloud Systems Environment [Version 2.4.0-aws]</div>
-        <div class="text-zinc-500">Type <span class="text-accent font-semibold">help</span> to view available system routines.</div>
-        <div>
-          <span class="text-accent">prak05@mesh-gateway:~$</span> <span class="text-white">whoami</span><br>
-          <span class="text-zinc-400">Prakhar Sharma — Cloud-Native Systems Engineer & AI Architect (KTU CSE)</span>
+        <!-- MuLearn Alumni Cell Lead -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-surface border-4 border-canvas group-hover:bg-redPrimary transition-colors"></div>
+          <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="font-bold text-lg text-textMain">Alumni Cell Lead // µLearn RIET</h3>
+              <span class="font-mono text-xs text-textMuted">Appointed Leadership</span>
+            </div>
+            <p class="text-xs text-textMuted font-mono mt-1">Managing 600+ engineers across Kerala alongside Doel Jose &amp; Soumya Sara John</p>
+            <p class="text-sm text-textMuted mt-3 leading-relaxed">
+              Spearheading mentorship pipelines, structured knowledge exchanges, and industry-readiness bootcamps connecting accomplished RIET alumni with current engineering batches under Principal Dr. Madhukumar S.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- Prompt Input -->
-      <div class="bg-surface px-6 py-3.5 border-t border-subtle flex items-center gap-3">
-        <span class="text-accent font-bold">prak05@mesh-gateway:~$</span>
-        <input id="terminal-input" type="text" autocomplete="off" placeholder="type 'help', 'projects', 'contact'..." class="bg-transparent text-white focus:outline-none flex-1 font-mono text-xs placeholder:text-zinc-600" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 4: Clustered Tech Stack Icons -->
-  <section id="stack" class="max-w-7xl mx-auto px-6 py-24 border-b border-subtle">
-    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-      <div class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent">
-        <span>// Complete Toolchain</span>
-      </div>
-      <h2 class="font-display text-3xl md:text-4xl font-black uppercase tracking-tight text-white">Engineering Competencies</h2>
-      <p class="text-zinc-400 text-sm">Clustered technology disciplines supporting enterprise deployments.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs">
-      
-      <div class="spotlight-card p-6 space-y-4">
-        <div class="flex items-center justify-between text-accent">
-          <span class="uppercase tracking-widest font-semibold text-[11px]">01 // Cloud & DevOps</span>
-          <i data-lucide="cloud" class="w-4 h-4"></i>
+        <!-- AWS SBGL -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-surface border-4 border-canvas group-hover:bg-redPrimary transition-colors"></div>
+          <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="font-bold text-lg text-textMain">AWS Student Builder Group Leader (SBGL) // RIET</h3>
+              <span class="font-mono text-xs text-textMuted">CloudCraft Bootcamp Director</span>
+            </div>
+            <p class="text-xs text-textMuted font-mono mt-1">AWS Certified Cloud Architecture &amp; Community Building</p>
+            <p class="text-sm text-textMuted mt-3 leading-relaxed">
+              Directed the 4-day <b>CloudCraft GenAI Bootcamp</b>, successfully onboarding 150+ student engineers to AWS cloud infrastructure, serverless architectures, and Bedrock foundation models.
+            </p>
+          </div>
         </div>
-        <p class="text-zinc-400 text-[11px] leading-relaxed">AWS (Bedrock, SageMaker, ECS, S3, DynamoDB), Docker, Terraform IaC, Linux, NGINX, CI/CD.</p>
-        <img src="https://skillicons.dev/icons?i=aws,docker,terraform,linux,bash,nginx,githubactions&theme=dark" alt="Cloud" />
-      </div>
 
-      <div class="spotlight-card p-6 space-y-4">
-        <div class="flex items-center justify-between text-indigo">
-          <span class="uppercase tracking-widest font-semibold text-[11px]">02 // AI & Machine Learning</span>
-          <i data-lucide="cpu" class="w-4 h-4"></i>
+        <!-- Edunet / IBM / AICTE -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-surface border-4 border-canvas group-hover:bg-redPrimary transition-colors"></div>
+          <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="font-bold text-lg text-textMain">AI Cloud Developer Intern // Edunet Foundation &amp; IBM SkillsBuild</h3>
+              <span class="font-mono text-xs text-textMuted">AICTE Collaboration</span>
+            </div>
+            <p class="text-xs text-textMuted font-mono mt-1">Built Fasal Saarthi &amp; Agri-Smart Pro</p>
+            <p class="text-sm text-textMuted mt-3 leading-relaxed">
+              End-to-end ML pipeline engineering on IBM watsonx.ai Studio, AutoAI, and Cloud REST clients. Recognized as finalist in Shell India Skills4Future Green Skills AI initiative.
+            </p>
+          </div>
         </div>
-        <p class="text-zinc-400 text-[11px] leading-relaxed">Python, PyTorch, LangChain, FastMCP, LightGBM, XGBoost, Scikit-Learn, OpenSearch, ChromaDB.</p>
-        <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,scikitlearn,fastapi&theme=dark" alt="AI/ML" />
+
       </div>
+    </section>
 
-      <div class="spotlight-card p-6 space-y-4">
-        <div class="flex items-center justify-between text-cyan">
-          <span class="uppercase tracking-widest font-semibold text-[11px]">03 // Fullstack & Systems</span>
-          <i data-lucide="code" class="w-4 h-4"></i>
-        </div>
-        <p class="text-zinc-400 text-[11px] leading-relaxed">TypeScript, React, Next.js, Node.js, Tailwind CSS, Flutter, GraphQL, C, C++, Lex, Yacc.</p>
-        <img src="https://skillicons.dev/icons?i=ts,react,nextjs,nodejs,tailwind,c,cpp&theme=dark" alt="Fullstack" />
-      </div>
-
-      <div class="spotlight-card p-6 space-y-4">
-        <div class="flex items-center justify-between text-emerald-400">
-          <span class="uppercase tracking-widest font-semibold text-[11px]">04 // Data & Storage</span>
-          <i data-lucide="database" class="w-4 h-4"></i>
-        </div>
-        <p class="text-zinc-400 text-[11px] leading-relaxed">Amazon DynamoDB, PostgreSQL, Amazon Aurora, SQLite, MongoDB, Redis, Oracle SQL.</p>
-        <img src="https://skillicons.dev/icons?i=postgres,dynamodb,redis,mongodb,sqlite&theme=dark" alt="Data" />
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Section 5: Academic CSE Lab Suites -->
-  <section class="max-w-7xl mx-auto px-6 py-24 border-b border-subtle">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+    <!-- 04 / CAMPUS MOVEMENTS & SPRINT RUNS (VIDYA SADHNAM & MUTATE) -->
+    <section id="initiatives" class="space-y-8">
       <div>
-        <div class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent mb-2">
-          <span>// Foundational Core</span>
-        </div>
-        <h2 class="font-display text-3xl font-extrabold uppercase tracking-tight text-white">Computer Science Lab Suites</h2>
-      </div>
-      <span class="font-mono text-xs uppercase tracking-wider text-zinc-500">All Lab Repositories Documented</span>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
-      <a href="https://github.com/prak05/LexiFlux-Compiler-Lab" target="_blank" class="spotlight-card p-6 block group">
-        <div class="flex items-center justify-between mb-3 text-zinc-400 group-hover:text-accent">
-          <span class="text-white font-bold text-sm">LexiFlux Compiler Lab</span>
-          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-        </div>
-        <p class="text-zinc-400 text-[11px] leading-relaxed">Lexical analyzers, Yacc parsers, intermediate code generation, and shift-reduce engines.</p>
-      </a>
-
-      <a href="https://github.com/prak05/PacketPulse-Networks-Lab" target="_blank" class="spotlight-card p-6 block group">
-        <div class="flex items-center justify-between mb-3 text-zinc-400 group-hover:text-accent">
-          <span class="text-white font-bold text-sm">PacketPulse Networks Lab</span>
-          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-        </div>
-        <p class="text-zinc-400 text-[11px] leading-relaxed">Flow and error control implementations: Go-Back-N, Selective Repeat, Leaky Bucket.</p>
-      </a>
-
-      <a href="https://github.com/prak05/SysForge-Systems-Lab" target="_blank" class="spotlight-card p-6 block group">
-        <div class="flex items-center justify-between mb-3 text-zinc-400 group-hover:text-accent">
-          <span class="text-white font-bold text-sm">SysForge Systems Lab</span>
-          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-        </div>
-        <p class="text-zinc-400 text-[11px] leading-relaxed">Memory allocation (Best/Worst/First Fit), page replacement (FIFO/LRU), 2-pass assembler.</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-16 bg-canvas text-center font-mono text-xs text-zinc-500">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-        <span class="w-2 h-2 rounded-full bg-accent"></span>
-        <span class="text-zinc-300">PRAKHAR SHARMA // CLOUD SYSTEMS PORTFOLIO</span>
+        <span class="font-mono text-xs text-redPrimary uppercase tracking-widest">03 // Developer Culture</span>
+        <h2 class="font-headline text-4xl sm:text-5xl text-textMain">CAMPUS MOVEMENTS &amp; SPRINTS</h2>
       </div>
 
-      <div class="text-zinc-600 text-[11px]">
-        DESIGNED WITH ACID LIME ACCENT • DUAL-BRANCH PRESERVATION
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Vidya Sadhnam Movement -->
+        <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-3 h-3 rounded-full bg-redPrimary animate-pulse"></div>
+            <h3 class="font-bold text-xl text-textMain">Vidya Sadhnam // Execution Culture</h3>
+          </div>
+          <p class="text-xs text-textMuted leading-relaxed mb-4">
+            Founded to bridge classroom theory to industry-grade software deployment at RIET. Officially commended with Letter of Recommendation by <b>Dr. Sangeetha Shibu (HoD, CSE)</b> and <b>Asst. Prof. Amrutha S Aravind</b>.
+          </p>
+          <div class="space-y-3 font-mono text-xs">
+            <div class="p-3 rounded-xl bg-surface border border-borderSubtle">
+              <span class="text-redPrimary font-bold">1. GitHub Geeks Sprint:</span>
+              <p class="text-textMuted text-[11px] mt-1">Deconstructed Git, Google Antigravity, Web Architecture &amp; deployed real-time software on Vercel within 30 minutes for S2 CSE peers.</p>
+            </div>
+            <div class="p-3 rounded-xl bg-surface border border-borderSubtle">
+              <span class="text-redPrimary font-bold">2. Data Manipulators Sprint:</span>
+              <p class="text-textMuted text-[11px] mt-1">Hands-on ML &amp; Full Stack deep dive: Google Colab, Kaggle, IndiaAI AI Kosh, Supabase, and National Internship Program (NIP) onboarding.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mutate '26 & Olympus -->
+        <div class="p-6 rounded-2xl bg-panel border border-borderSubtle hover:border-redPrimary transition-all">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-3 h-3 rounded-full bg-redPrimary animate-pulse"></div>
+            <h3 class="font-bold text-xl text-textMain">Ecosystem Summits &amp; Technopark Meets</h3>
+          </div>
+          <p class="text-xs text-textMuted leading-relaxed mb-4">
+            Engaging with industry leaders and scaling enterprise healthcare &amp; HR technology networks across Kerala's top technical hubs.
+          </p>
+          <div class="space-y-3 font-mono text-xs">
+            <div class="p-3 rounded-xl bg-surface border border-borderSubtle">
+              <span class="text-redPrimary font-bold">MUTATE '26 // Technopark:</span>
+              <p class="text-textMuted text-[11px] mt-1">Ospyn Technologies Technopark meet. Strategized with Claire C John, Edwin Arun (UST HealthProof), and Deepu S Nath on scaling clinical RAG.</p>
+            </div>
+            <div class="p-3 rounded-xl bg-surface border border-borderSubtle">
+              <span class="text-redPrimary font-bold">Olympus: The HR Icon // CareStack:</span>
+              <p class="text-textMuted text-[11px] mt-1">Volunteered &amp; collaborated with MuLearn Foundation, Life at CareStack, and 50,000+ learner network with Sachin Raj M and Vishnu Prasad M V.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 05 / COMPETITIONS & HONORS -->
+    <section class="space-y-8">
+      <div>
+        <span class="font-mono text-xs text-redPrimary uppercase tracking-widest">04 // Accolades &amp; Distinctions</span>
+        <h2 class="font-headline text-4xl sm:text-5xl text-textMain">COMPETITIVE RECORD</h2>
       </div>
 
-      <div class="flex items-center gap-6">
-        <a href="mailto:prakharsx05@gmail.com" class="text-zinc-400 hover:text-accent transition-colors">prakharsx05@gmail.com</a>
-        
-        <a href="https://github.com/prak05" target="_blank" class="text-zinc-400 hover:text-accent transition-colors">GitHub</a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="p-5 rounded-2xl bg-panel border border-borderSubtle">
+          <div class="text-redPrimary font-bold text-sm font-mono mb-2">🏆 CLUSTER CHAMPION</div>
+          <h4 class="font-bold text-base text-textMain">IEEE Techventure 2.0 Debate</h4>
+          <p class="text-xs text-textMuted mt-2 leading-relaxed">
+            Cluster Debate Competition Winner at IEEE SB LBSITW alongside Akhil Kv &amp; Adithya Baiju; facilitated by Pavithra Kishore &amp; Mehreen Fathima.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-panel border border-borderSubtle">
+          <div class="text-redPrimary font-bold text-sm font-mono mb-2">🥇 1ST PLACE WINNER</div>
+          <h4 class="font-bold text-base text-textMain">Gravity | IEDC-MCET Ideathon</h4>
+          <p class="text-xs text-textMuted mt-2 leading-relaxed">
+            Awarded 1st Place for MedBuddy Healthcare AI assistant; selected by IEDC RIET under mentorship of Asst. Prof. Akshayraj M.R.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-panel border border-borderSubtle">
+          <div class="text-redPrimary font-bold text-sm font-mono mb-2">🚀 NATIONAL SHOWCASE</div>
+          <h4 class="font-bold text-base text-textMain">UST SIGHT 3.0 National Expo</h4>
+          <p class="text-xs text-textMuted mt-2 leading-relaxed">
+            National platform selection for MediScribe AI, presenting clinician-first speech-to-EHR transcription to healthtech executives.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-panel border border-borderSubtle">
+          <div class="text-redPrimary font-bold text-sm font-mono mb-2">🌍 GLOBAL CHALLENGE</div>
+          <h4 class="font-bold text-base text-textMain">Your Big Year® Global Citizens</h4>
+          <p class="text-xs text-textMuted mt-2 leading-relaxed">
+            Selected for the international Global Citizens Challenge (Feb 2026), connecting innovators across worldwide technical networks.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-panel border border-borderSubtle">
+          <div class="text-redPrimary font-bold text-sm font-mono mb-2">⚡ GROUND ZERO COMPETITOR</div>
+          <h4 class="font-bold text-base text-textMain">Google Solution Challenge 2026</h4>
+          <p class="text-xs text-textMuted mt-2 leading-relaxed">
+            Actively competing on ground zero, engineering scalable cloud solutions tackling United Nations Sustainable Development Goals.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-panel border border-borderSubtle">
+          <div class="text-redPrimary font-bold text-sm font-mono mb-2">🎶 CLASSICAL ARTIST</div>
+          <h4 class="font-bold text-base text-textMain">Classical Indian Veena</h4>
+          <p class="text-xs text-textMuted mt-2 leading-relaxed">
+            Seasoned classical musician with distinguished performances including for the Chief of Western Air Command.
+          </p>
+        </div>
+
       </div>
+    </section>
+
+    <!-- 06 / THE ALLIANCE & MENTOR NETWORK -->
+    <section class="p-8 rounded-3xl bg-panel border border-borderSubtle space-y-6">
+      <div>
+        <span class="font-mono text-xs text-redPrimary uppercase tracking-widest">05 // The Inner Circle</span>
+        <h2 class="font-headline text-3xl sm:text-4xl text-textMain">HONORING COLLABORATORS &amp; MENTORS</h2>
+        <p class="text-xs text-textMuted mt-1">Behind every resilient system is an ecosystem of uncompromising builders and guiding mentors.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        <div class="p-4 rounded-xl bg-surface border border-borderSubtle">
+          <p class="font-bold text-sm text-redPrimary font-mono">The Mandanmaars Crew</p>
+          <p class="text-xs text-textMain font-semibold mt-1">Adithya Baiju &amp; Akhil Kv &amp; Adarsh Biju</p>
+          <p class="text-[11px] text-textMuted mt-2 leading-relaxed">
+            "Team that keeps it real, always. The kind of people you want in the room when things get serious." Co-builders on MediScribe, MedBuddy, and Vidya Sadhnam.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-surface border border-borderSubtle">
+          <p class="font-bold text-sm text-redPrimary font-mono">Faculty &amp; Department Mentors</p>
+          <p class="text-xs text-textMain font-semibold mt-1">Dr. Sangeetha Shibu, Asst. Prof. Amrutha, Asst. Prof. Akshayraj</p>
+          <p class="text-[11px] text-textMuted mt-2 leading-relaxed">
+            CSE Department leadership at RIET, supporting KSERC government initiatives, Vidya Sadhnam sessions, and academic recommendations.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-surface border border-borderSubtle">
+          <p class="font-bold text-sm text-redPrimary font-mono">Ecosystem Leaders</p>
+          <p class="text-xs text-textMain font-semibold mt-1">Deepu S Nath, Sachin Raj M, Shri Jose T K IAS</p>
+          <p class="text-[11px] text-textMuted mt-2 leading-relaxed">
+            The Purple Movement, MuLearn leadership, and KSERC commission mentorship facilitating real-world execution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 / VISUAL CHRONICLE & PHOTO GALLERY PLACEHOLDERS ("later imma add pics too") -->
+    <section id="gallery" class="space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="font-mono text-xs text-redPrimary uppercase tracking-widest">06 // Visual Chronicle</span>
+          <h2 class="font-headline text-4xl sm:text-5xl text-textMain">EVENT ARCHIVES &amp; MEDIA VAULT</h2>
+        </div>
+        <span class="font-mono text-xs text-textMuted">Slot Ready for High-Res Captures</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Slot 1: CloudCraft Bootcamp -->
+        <div class="rounded-2xl bg-panel border border-borderSubtle overflow-hidden group hover:border-redPrimary transition-all">
+          <div class="aspect-video bg-surface relative flex items-center justify-center p-4">
+            <img src="assets/prakhar-profile.jpg" alt="CloudCraft GenAI" class="w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity" />
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+              <span class="p-3 rounded-full bg-canvas/80 border border-borderSubtle text-redPrimary mb-2">
+                <i data-lucide="cloud" class="w-6 h-6"></i>
+              </span>
+              <p class="font-mono text-xs font-bold text-textMain">CloudCraft GenAI Bootcamp</p>
+              <p class="text-[10px] text-textMuted">150+ Engineers Onboarded to AWS</p>
+            </div>
+          </div>
+          <div class="p-4 border-t border-borderSubtle">
+            <span class="font-mono text-[10px] text-redPrimary">AWS SBGL // RIET CAMPUS</span>
+            <p class="text-xs text-textMuted mt-1">Hands-on architecture workshops on Bedrock, SageMaker &amp; Serverless clouds.</p>
+          </div>
+        </div>
+
+        <!-- Slot 2: Vidya Sadhnam Sprints -->
+        <div class="rounded-2xl bg-panel border border-borderSubtle overflow-hidden group hover:border-redPrimary transition-all">
+          <div class="aspect-video bg-surface relative flex items-center justify-center p-4">
+            <img src="assets/hero.svg" alt="Vidya Sadhnam" class="w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity" />
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+              <span class="p-3 rounded-full bg-canvas/80 border border-borderSubtle text-redPrimary mb-2">
+                <i data-lucide="code-2" class="w-6 h-6"></i>
+              </span>
+              <p class="font-mono text-xs font-bold text-textMain">Vidya Sadhnam: GitHub Geeks</p>
+              <p class="text-[10px] text-textMuted">Live Vercel Deployment Sprint</p>
+            </div>
+          </div>
+          <div class="p-4 border-t border-borderSubtle">
+            <span class="font-mono text-[10px] text-redPrimary">DEPLOYMENT CULTURE</span>
+            <p class="text-xs text-textMuted mt-1">S2 CSE juniors deploying production web apps in 30 minutes.</p>
+          </div>
+        </div>
+
+        <!-- Slot 3: KSERC Commission Presentation -->
+        <div class="rounded-2xl bg-panel border border-borderSubtle overflow-hidden group hover:border-redPrimary transition-all">
+          <div class="aspect-video bg-surface relative flex items-center justify-center p-4">
+            <img src="assets/builder_badge.svg" alt="KSERC Presentation" class="w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity" />
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+              <span class="p-3 rounded-full bg-canvas/80 border border-borderSubtle text-redPrimary mb-2">
+                <i data-lucide="landmark" class="w-6 h-6"></i>
+              </span>
+              <p class="font-mono text-xs font-bold text-textMain">KSERC Commission Board</p>
+              <p class="text-[10px] text-textMuted">Shri Jose T K IAS &amp; Board Members</p>
+            </div>
+          </div>
+          <div class="p-4 border-t border-borderSubtle">
+            <span class="font-mono text-[10px] text-redPrimary">GOVT. STATUTORY MOU</span>
+            <p class="text-xs text-textMuted mt-1">Truing-Up petition audit presentation at KSERC headquarters.</p>
+          </div>
+        </div>
+
+        <!-- Slot 4: IEEE Techventure 2.0 Debate -->
+        <div class="rounded-2xl bg-panel border border-borderSubtle overflow-hidden group hover:border-redPrimary transition-all">
+          <div class="aspect-video bg-surface relative flex items-center justify-center p-4">
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+              <span class="p-3 rounded-full bg-canvas/80 border border-borderSubtle text-redPrimary mb-2">
+                <i data-lucide="award" class="w-6 h-6"></i>
+              </span>
+              <p class="font-mono text-xs font-bold text-textMain">IEEE Techventure 2.0 Debate</p>
+              <p class="text-[10px] text-textMuted">Cluster Champions // LBSITW</p>
+            </div>
+          </div>
+          <div class="p-4 border-t border-borderSubtle">
+            <span class="font-mono text-[10px] text-redPrimary">IEEE COMPUTER SOCIETY</span>
+            <p class="text-xs text-textMuted mt-1">Victorious alongside Akhil Kv &amp; Adithya Baiju.</p>
+          </div>
+        </div>
+
+        <!-- Slot 5: MUTATE '26 Technopark -->
+        <div class="rounded-2xl bg-panel border border-borderSubtle overflow-hidden group hover:border-redPrimary transition-all">
+          <div class="aspect-video bg-surface relative flex items-center justify-center p-4">
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+              <span class="p-3 rounded-full bg-canvas/80 border border-borderSubtle text-redPrimary mb-2">
+                <i data-lucide="network" class="w-6 h-6"></i>
+              </span>
+              <p class="font-mono text-xs font-bold text-textMain">MUTATE '26 Campus Meet</p>
+              <p class="text-[10px] text-textMuted">Ospyn Technologies Technopark</p>
+            </div>
+          </div>
+          <div class="p-4 border-t border-borderSubtle">
+            <span class="font-mono text-[10px] text-redPrimary">HEALTH-TECH NETWORKING</span>
+            <p class="text-xs text-textMuted mt-1">Strategizing clinical RAG scaling with healthtech leaders.</p>
+          </div>
+        </div>
+
+        <!-- Slot 6: Olympus HR Icon -->
+        <div class="rounded-2xl bg-panel border border-borderSubtle overflow-hidden group hover:border-redPrimary transition-all">
+          <div class="aspect-video bg-surface relative flex items-center justify-center p-4">
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+              <span class="p-3 rounded-full bg-canvas/80 border border-borderSubtle text-redPrimary mb-2">
+                <i data-lucide="users" class="w-6 h-6"></i>
+              </span>
+              <p class="font-mono text-xs font-bold text-textMain">Olympus: The HR Icon</p>
+              <p class="text-[10px] text-textMuted">CareStack Technopark</p>
+            </div>
+          </div>
+          <div class="p-4 border-t border-borderSubtle">
+            <span class="font-mono text-[10px] text-redPrimary">MULEARN COMMUNITY</span>
+            <p class="text-xs text-textMuted mt-1">Collaborating with organizational and HR leaders across Kerala.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 08 / INTERACTIVE COMMAND TERMINAL -->
+    <section id="terminal" class="space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="font-mono text-xs text-redPrimary uppercase tracking-widest">07 // Root Console</span>
+        <span class="font-mono text-xs text-textMuted">Try: help, kserc, projects, awards, clear</span>
+      </div>
+
+      <div class="rounded-2xl bg-panel border border-borderSubtle p-6 font-mono text-xs shadow-2xl">
+        <div class="flex items-center justify-between pb-4 border-b border-borderSubtle mb-4">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-redPrimary"></span>
+            <span class="w-3 h-3 rounded-full bg-borderSubtle"></span>
+            <span class="w-3 h-3 rounded-full bg-borderSubtle"></span>
+            <span class="ml-2 text-textMuted text-[11px]">prak05@kernel:~/production</span>
+          </div>
+          <span class="text-[10px] text-redPrimary font-bold">SYSTEM ACTIVE</span>
+        </div>
+
+        <div id="termLogs" class="space-y-2 text-textMuted min-h-[160px] max-h-[300px] overflow-y-auto">
+          <p><span class="text-redPrimary">prak05@kernel:~$</span> welcome --verbose</p>
+          <p class="text-textMain">PRAKHAR SHARMA // Cloud-Native Systems Engineer &amp; AI Systems Architect.</p>
+          <p class="text-textMuted">Type <span class="text-redPrimary font-bold">'help'</span> to see available system commands.</p>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-borderSubtle flex items-center gap-2">
+          <span class="text-redPrimary font-bold">&gt;</span>
+          <input id="termInput" type="text" placeholder="Type a command and press Enter..." class="w-full bg-transparent border-none outline-none text-textMain placeholder:text-textMuted/50 font-mono text-xs" />
+        </div>
+      </div>
+    </section>
+
+    <!-- TERMINAL SCRIPT -->
+    <script>
+      const termInput = document.getElementById('termInput');
+      const termLogs = document.getElementById('termLogs');
+
+      const commands = {
+        help: "Available commands:\n- kserc     : View Kerala State Electricity Regulatory Commission details\n- projects  : List flagship engineering repositories\n- awards    : View IEEE, Shell, and Ideathon honors\n- ethos     : Read core personal philosophy\n- clear     : Wipe console output",
+        kserc: "KSERC STATUTORY INTERNSHIP:\n- Appointed under signed MoU between KSERC Board & RIET\n- Presented to Chairman Shri Jose T K IAS (Rtd.) & Member Shri B. Pradeep\n- Built automated AI Regulatory Truing-Up Tool for tariff financial audits",
+        projects: "FLAGSHIP SYSTEMS:\n1. OmniPrice ML Engine (AWS SageMaker, LightGBM, 38ms P99)\n2. MediScribe AI Platform (Clinical Speech-to-EHR RAG, UST SIGHT 3.0)\n3. MedBuddy Clinical RAG (Hybrid Dense + BM25, IEDC Winner)\n4. Agri-Smart Pro (Top 1.1% Finalist, Shell/AICTE)\n5. Fasal Saarthi: Kushal Kisan (IBM watsonx.ai AutoAI)",
+        awards: "COMPETITIVE ACCOLADES:\n• IEEE Techventure 2.0 Debate Cluster Champion\n• Gravity | IEDC-MCET Cluster Ideathon 1st Place\n• Top 40 Finalist (Top 1.1%) in AICTE / Shell India Skills4Future\n• UST SIGHT 3.0 National Showcase Selection",
+        ethos: "CORE PHILOSOPHY:\n'Guided by duty-driven action from the Bhagavad Gita and defense discipline. The correction guy who dives into intricate codebases to neutralize anomalies.'",
+      };
+
+      termInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const val = termInput.value.trim().toLowerCase();
+          playBeep(750, 'sine', 0.05);
+
+          const promptLine = document.createElement('p');
+          promptLine.innerHTML = `<span class="text-redPrimary">prak05@kernel:~$</span> ${termInput.value}`;
+          termLogs.appendChild(promptLine);
+
+          if (val === 'clear') {
+            termLogs.innerHTML = '';
+          } else if (commands[val]) {
+            const resp = document.createElement('p');
+            resp.className = 'text-textMain whitespace-pre-line';
+            resp.textContent = commands[val];
+            termLogs.appendChild(resp);
+          } else if (val) {
+            const err = document.createElement('p');
+            err.className = 'text-redPrimary';
+            err.textContent = `zsh: command not found: ${val}. Type 'help' for available commands.`;
+            termLogs.appendChild(err);
+          }
+
+          termInput.value = '';
+          termLogs.scrollTop = termLogs.scrollHeight;
+        }
+      });
+    </script>
+
+    <!-- 09 / DIRECT DISPATCH & CONTACT HUB -->
+    <section id="contact" class="p-8 sm:p-12 rounded-3xl bg-panel border-2 border-redPrimary/40 space-y-8 relative overflow-hidden shadow-red-glow">
+      <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-redPrimary/15 rounded-full blur-[90px] pointer-events-none"></div>
+
+      <div class="max-w-2xl space-y-4">
+        <span class="font-mono text-xs text-redPrimary uppercase tracking-widest">08 // Connection Channel</span>
+        <h2 class="font-headline text-5xl sm:text-6xl text-textMain leading-tight">BUILD SOMETHING GREAT.</h2>
+        <p class="text-sm text-textMuted leading-relaxed">
+          Open for high-dimensional cloud architecture, enterprise Generative AI systems, and technical community scaling. Connect directly through verified institutional channels.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 pt-2">
+        <a href="mailto:prakharsx05@gmail.com" class="px-6 py-3.5 rounded-full bg-redPrimary hover:bg-redPrimary/90 text-white font-mono text-xs font-bold tracking-wider uppercase transition-all shadow-red-sm flex items-center gap-2" onclick="playBeep(900)">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>prakharsx05@gmail.com</span>
+        </a>
+
+        <a href="https://github.com/prak05" target="_blank" class="px-6 py-3.5 rounded-full bg-surface border border-borderSubtle hover:border-redPrimary text-textMain font-mono text-xs font-bold tracking-wider uppercase transition-all flex items-center gap-2" onclick="playBeep(800)">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>GitHub // @prak05</span>
+        </a>
+
+        <a href="https://linkedin.com" target="_blank" class="px-6 py-3.5 rounded-full bg-surface border border-borderSubtle hover:border-redPrimary text-textMain font-mono text-xs font-bold tracking-wider uppercase transition-all flex items-center gap-2" onclick="playBeep(800)">
+          <i data-lucide="linkedin" class="w-4 h-4"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-borderSubtle mt-24 py-12 bg-canvas/90">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-textMuted">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-redPrimary"></span>
+        <span>PRAKHAR SHARMA // 2026</span>
+      </div>
+      <p class="text-center sm:text-right">
+        Architected with extreme precision • Dark Charcoal &amp; Hot Red Bento • Dual-Branch Safe
+      </p>
     </div>
   </footer>
 
   <script>
-    // Initialize Lucide Icons
     lucide.createIcons();
-
-    // Mouse-tracking spotlight effect on cards
-    document.querySelectorAll('.spotlight-card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-      });
-    });
-
-    // Interactive Terminal Shell
-    const terminalInput = document.getElementById('terminal-input');
-    const terminalScreen = document.getElementById('terminal-screen');
-
-    const commands = {
-      'help': 'Available commands: whoami, projects, experience, leadership, skills, contact, clear',
-      'whoami': 'Prakhar Sharma — Cloud-Native Systems Engineer & AI Systems Architect (APJ KTU B.Tech CSE).',
-      'projects': '8 Flagship Systems: OmniPrice, MediScribe, MedBuddy, RetinaScan, AgriSmart, KSERC, OptiSchedule, AtithiFusion.',
-      'experience': '• KSERC (AI Truing-Up Tool)\n• AND Intern (Data Science & ML)\n• Edunet / IBM SkillsBuild (AI Cloud)\n• Innovate Intern (GCP Cloud Security)\n• VirtuNexa (Android Developer)',
-      'leadership': '• AWS Student Builder Group Leader (SBGL)\n• Google Gemini Student Ambassador (GSA)\n• MuLearn Alumni Cell Lead (600+ engineers)\n• Founder, Vidya Sadhnam (300+ students)\n• IEEE Techventure 2.0 Debate Winner',
-      'skills': 'AWS (Bedrock, SageMaker, ECS, S3, DynamoDB), Python, PyTorch, LangChain, FastMCP, TypeScript, React, Next.js, Docker, Terraform.',
-      'contact': 'Email: prakharsx05@gmail.com  | GitHub: github.com/prak05',
-    };
-
-    terminalInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') {
-        const val = this.value.trim().toLowerCase();
-        if (!val) return;
-
-        // User line
-        const userDiv = document.createElement('div');
-        userDiv.innerHTML = `<span class="text-accent">prak05@mesh-gateway:~$</span> <span class="text-white">${this.value}</span>`;
-        terminalScreen.appendChild(userDiv);
-
-        if (val === 'clear') {
-          terminalScreen.innerHTML = '<div class="text-zinc-500">Screen cleared. Type <span class="text-accent font-semibold">help</span> for commands.</div>';
-        } else if (commands[val]) {
-          const respDiv = document.createElement('div');
-          respDiv.className = 'text-zinc-400 whitespace-pre-line';
-          respDiv.textContent = commands[val];
-          terminalScreen.appendChild(respDiv);
-        } else {
-          const errDiv = document.createElement('div');
-          errDiv.className = 'text-rose-400';
-          errDiv.textContent = `command not found: ${val}. Type 'help' for available commands.`;
-          terminalScreen.appendChild(errDiv);
-        }
-
-        this.value = '';
-        terminalScreen.scrollTop = terminalScreen.scrollHeight;
-      }
-    });
   </script>
 </body>
 </html>

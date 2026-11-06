@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 460" width="100%" height="100%">
+  <defs>
+    <radialGradient id="orbitGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF002D" stop-opacity="0.9" />
+      <stop offset="60%" stop-color="#74121F" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#1b1b1b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <style>
+    .mono { font-family: 'JetBrains Mono', 'Space Mono', 'Courier New', monospace; }
+    .sans { font-family: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif; }
+    .orbit-label { font-size: 10px; font-weight: 700; fill: #F5F2F0; text-anchor: middle; }
+    .chip { font-size: 11px; font-weight: 600; fill: #D8D5D3; }
+  </style>
+
+  <rect width="1100" height="460" rx="16" fill="#1b1b1b" stroke="#393434" stroke-width="1.5" />
+
+  <!-- Section Header -->
+  <text x="45" y="45" class="mono" font-size="11" font-weight="700" fill="#FF002D" letter-spacing="2">03 / MY ENGINE ROOM</text>
+  <text x="45" y="75" class="sans" font-size="22" font-weight="900" fill="#F5F2F0">TOOLS CHANGE. CURIOSITY DOESN'T.</text>
+  <text x="1055" y="45" text-anchor="end" class="mono" font-size="16" fill="#FF002D">///</text>
+
+  <!-- Left: Animated Orbit Diagram -->
+  <g transform="translate(240, 260)">
+    <!-- Orbit Rings -->
+    <circle cx="0" cy="0" r="145" fill="none" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4,4" />
+    <circle cx="0" cy="0" r="95" fill="none" stroke="#3a3a3a" stroke-width="1.5" />
+
+    <!-- Core Center Node -->
+    <circle cx="0" cy="0" r="50" fill="url(#orbitGlow)" />
+    <circle cx="0" cy="0" r="38" fill="#171717" stroke="#FF002D" stroke-width="2" />
+    <text y="-5" class="mono" font-size="10" font-weight="800" fill="#FF002D" text-anchor="middle">AI &amp; CLOUD</text>
+    <text y="10" class="mono" font-size="10" font-weight="800" fill="#F5F2F0" text-anchor="middle">CORE</text>
+
+    <!-- Ring 1: Rotating Clockwise (FastMCP, Bedrock, PyTorch, Docker) -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite" />
+      <!-- Node: AWS Bedrock -->
+      <g transform="translate(95, 0)">
+        <circle cx="0" cy="0" r="18" fill="#252323" stroke="#FF002D" stroke-width="1.5" />
+        <text y="4" class="mono orbit-label">AWS</text>
+      </g>
+      <!-- Node: PyTorch -->
+      <g transform="translate(0, 95)">
+        <circle cx="0" cy="0" r="18" fill="#252323" stroke="#514347" stroke-width="1" />
+        <text y="4" class="mono orbit-label">TORCH</text>
+      </g>
+      <!-- Node: FastMCP -->
+      <g transform="translate(-95, 0)">
+        <circle cx="0" cy="0" r="18" fill="#252323" stroke="#FF002D" stroke-width="1.5" />
+        <text y="4" class="mono orbit-label">MCP</text>
+      </g>
+      <!-- Node: Docker -->
+      <g transform="translate(0, -95)">
+        <circle cx="0" cy="0" r="18" fill="#252323" stroke="#514347" stroke-width="1" />
+        <text y="4" class="mono orbit-label">DOCKER</text>
+      </g>
+    </g>
+
+    <!-- Ring 2: Rotating Counter-Clockwise (Python, FastAPI, Linux, LangChain) -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="36s" repeatCount="indefinite" />
+      <g transform="translate(102, 102)">
+        <circle cx="0" cy="0" r="16" fill="#252323" stroke="#514347" stroke-width="1" />
+        <text y="4" class="mono orbit-label">PYTHON</text>
+      </g>
+      <g transform="translate(-102, 102)">
+        <circle cx="0" cy="0" r="16" fill="#252323" stroke="#FF002D" stroke-width="1.5" />
+        <text y="4" class="mono orbit-label">FASTAPI</text>
+      </g>
+      <g transform="translate(-102, -102)">
+        <circle cx="0" cy="0" r="16" fill="#252323" stroke="#514347" stroke-width="1" />
+        <text y="4" class="mono orbit-label">LINUX</text>
+      </g>
+      <g transform="translate(102, -102)">
+        <circle cx="0" cy="0" r="16" fill="#252323" stroke="#FF002D" stroke-width="1.5" />
+        <text y="4" class="mono orbit-label">RAG</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right: Grouped Tool Chips -->
+  <g transform="translate(520, 100)">
+    <!-- Group 1: Languages & Core -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="16" class="mono" font-size="11" font-weight="700" fill="#FF002D" letter-spacing="1">LANGUAGES &amp; RUNTIMES</text>
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="85" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="14" y="21" class="sans chip">Python</text>
+        <rect x="95" y="0" width="60" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="107" y="21" class="sans chip">C / C++</text>
+        <rect x="165" y="0" width="65" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="178" y="21" class="sans chip">Java</text>
+        <rect x="240" y="0" width="65" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="253" y="21" class="sans chip">SQL</text>
+        <rect x="315" y="0" width="95" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="327" y="21" class="sans chip">TypeScript</text>
+        <rect x="420" y="0" width="85" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="432" y="21" class="sans chip">Bash / Zsh</text>
+      </g>
+    </g>
+
+    <!-- Group 2: AI / ML & Frameworks -->
+    <g transform="translate(0, 110)">
+      <text x="0" y="16" class="mono" font-size="11" font-weight="700" fill="#FF002D" letter-spacing="1">AI, LLM &amp; RETRIEVAL STACK</text>
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="105" height="34" rx="8" fill="#252323" stroke="#FF002D" stroke-width="1.5" />
+        <text x="12" y="21" class="sans chip" fill="#FF002D">FastMCP 2.0</text>
+        <rect x="115" y="0" width="90" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="127" y="21" class="sans chip">PyTorch</text>
+        <rect x="215" y="0" width="95" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="227" y="21" class="sans chip">Scikit-Learn</text>
+        <rect x="320" y="0" width="90" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="332" y="21" class="sans chip">LightGBM</text>
+        <rect x="420" y="0" width="95" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="432" y="21" class="sans chip">LangChain</text>
+      </g>
+    </g>
+
+    <!-- Group 3: Cloud, Storage & DevOps -->
+    <g transform="translate(0, 220)">
+      <text x="0" y="16" class="mono" font-size="11" font-weight="700" fill="#FF002D" letter-spacing="1">CLOUD ARCHITECTURE &amp; STORAGE</text>
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="115" height="34" rx="8" fill="#252323" stroke="#FF002D" stroke-width="1.5" />
+        <text x="12" y="21" class="sans chip" fill="#FF002D">AWS Bedrock</text>
+        <rect x="125" y="0" width="105" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="137" y="21" class="sans chip">SageMaker</text>
+        <rect x="240" y="0" width="100" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="252" y="21" class="sans chip">ECS Fargate</text>
+        <rect x="350" y="0" width="85" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="362" y="21" class="sans chip">DynamoDB</text>
+        <rect x="445" y="0" width="85" height="34" rx="8" fill="#252323" stroke="#393434" stroke-width="1" />
+        <text x="457" y="21" class="sans chip">OpenSearch</text>
+      </g>
+    </g>
+  </g>
+</svg>

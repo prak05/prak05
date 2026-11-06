@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 620" width="100%" height="100%">
+  <defs>
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF002D" />
+      <stop offset="100%" stop-color="#FF3855" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .mono { font-family: 'JetBrains Mono', 'Space Mono', 'Courier New', monospace; }
+    .sans { font-family: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif; }
+    .stat-num { font-family: 'Anton', 'Bebas Neue', sans-serif; font-size: 34px; font-weight: 900; }
+  </style>
+
+  <rect width="620" height="620" rx="18" fill="#1b1b1b" stroke="#393434" stroke-width="2" />
+
+  <!-- Section Header -->
+  <text x="35" y="45" class="mono" font-size="11" font-weight="700" fill="#FF002D" letter-spacing="2">04 / METRICS MATRIX</text>
+  <text x="35" y="75" class="sans" font-size="22" font-weight="900" fill="#F5F2F0">REAL WORK. REAL IMPACT.</text>
+  <text x="585" y="45" text-anchor="end" class="mono" font-size="16" fill="#FF002D">///</text>
+
+  <!-- 3 Stat Tiles -->
+  <g transform="translate(35, 100)">
+    <!-- Tile 1 -->
+    <rect width="170" height="90" rx="10" fill="#252323" stroke="#393434" stroke-width="1.5" />
+    <text x="20" y="48" class="stat-num" fill="#F5F2F0">45+</text>
+    <text x="20" y="70" class="mono" font-size="10" fill="#A5A5A5">REPOSITORIES</text>
+
+    <!-- Tile 2: Key Metric in Red -->
+    <g transform="translate(190, 0)">
+      <rect width="170" height="90" rx="10" fill="#252323" stroke="#FF002D" stroke-width="1.5" />
+      <text x="20" y="48" class="stat-num" fill="#FF002D">Top 1.1%</text>
+      <text x="20" y="70" class="mono" font-size="10" fill="#F5F2F0">AICTE / SHELL NATL.</text>
+    </g>
+
+    <!-- Tile 3 -->
+    <g transform="translate(380, 0)">
+      <rect width="170" height="90" rx="10" fill="#252323" stroke="#393434" stroke-width="1.5" />
+      <text x="20" y="48" class="stat-num" fill="#F5F2F0">600+</text>
+      <text x="20" y="70" class="mono" font-size="10" fill="#A5A5A5">ENGINEERS REACHED</text>
+    </g>
+  </g>
+
+  <!-- Most-Starred / Flagship Repositories with Animated Progress Bars -->
+  <g transform="translate(35, 220)">
+    <text class="mono" font-size="11" font-weight="700" fill="#FF002D" letter-spacing="1">FLAGSHIP PRODUCTION VELOCITY</text>
+
+    <!-- Bar 1: OmniPrice ML Engine -->
+    <g transform="translate(0, 30)">
+      <text y="0" class="sans" font-size="12" font-weight="700" fill="#F5F2F0">OmniPrice-ML-Engine</text>
+      <text x="550" y="0" text-anchor="end" class="mono" font-size="11" fill="#FF002D">98% OPT</text>
+      <rect y="8" width="550" height="8" rx="4" fill="#2a2a2a" />
+      <rect y="8" width="539" height="8" rx="4" fill="url(#barGrad)">
+        <animate attributeName="width" values="0;539" dur="1.4s" fill="freeze" />
+      </rect>
+    </g>
+
+    <!-- Bar 2: MediScribe-AI-Platform -->
+    <g transform="translate(0, 75)">
+      <text y="0" class="sans" font-size="12" font-weight="700" fill="#F5F2F0">MediScribe-AI-Platform</text>
+      <text x="550" y="0" text-anchor="end" class="mono" font-size="11" fill="#FF002D">95% ACC</text>
+      <rect y="8" width="550" height="8" rx="4" fill="#2a2a2a" />
+      <rect y="8" width="522" height="8" rx="4" fill="url(#barGrad)">
+        <animate attributeName="width" values="0;522" dur="1.6s" fill="freeze" />
+      </rect>
+    </g>
+
+    <!-- Bar 3: MedBuddy-Clinical-RAG -->
+    <g transform="translate(0, 120)">
+      <text y="0" class="sans" font-size="12" font-weight="700" fill="#F5F2F0">MedBuddy-Clinical-RAG</text>
+      <text x="550" y="0" text-anchor="end" class="mono" font-size="11" fill="#FF002D">92% RET</text>
+      <rect y="8" width="550" height="8" rx="4" fill="#2a2a2a" />
+      <rect y="8" width="506" height="8" rx="4" fill="url(#barGrad)">
+        <animate attributeName="width" values="0;506" dur="1.8s" fill="freeze" />
+      </rect>
+    </g>
+
+    <!-- Bar 4: AgriSmart-Precision-Irrigation -->
+    <g transform="translate(0, 165)">
+      <text y="0" class="sans" font-size="12" font-weight="700" fill="#F5F2F0">AgriSmart-Precision-Irrigation</text>
+      <text x="550" y="0" text-anchor="end" class="mono" font-size="11" fill="#FF002D">Top 1.1%</text>
+      <rect y="8" width="550" height="8" rx="4" fill="#2a2a2a" />
+      <rect y="8" width="490" height="8" rx="4" fill="url(#barGrad)">
+        <animate attributeName="width" values="0;490" dur="2.0s" fill="freeze" />
+      </rect>
+    </g>
+  </g>
+
+  <!-- Red "NOW" Tagged Box: Current Status -->
+  <g transform="translate(35, 455)">
+    <rect width="550" height="125" rx="12" fill="#252323" stroke="#FF002D" stroke-width="1.5" />
+    <g transform="translate(20, 20)">
+      <rect width="45" height="22" rx="4" fill="#FF002D" />
+      <text x="22" y="15" class="mono" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle">NOW</text>
+
+      <text x="55" y="16" class="sans" font-size="13" font-weight="800" fill="#F5F2F0">CURRENT EXECUTION SPRINT</text>
+      <text y="44" class="sans" font-size="12" fill="#D8D5D3">
+        • Directing Vidya Sadhnam peer deployment sprints (GitHub Geeks &amp; Data Manipulators).
+      </text>
+      <text y="64" class="sans" font-size="12" fill="#D8D5D3">
+        • Advancing KSERC Regulatory Truing-Up Tool under RIET institutional MoU.
+      </text>
+      <text y="84" class="mono" font-size="11" fill="#A5A5A5">
+        Target: Scaling high-dimensional distributed RAG with zero latency degradation.
+      </text>
+    </g>
+  </g>
+</svg>

@@ -1,180 +1,221 @@
 <div align="center">
 
-# ⚡ PRAKHAR SHARMA
-### Cloud-Native Systems Engineer & AI Systems Architect
-**APJ Abdul Kalam Technological University (KTU) • B.Tech Computer Science & Engineering**
-
-<br/>
-
-<a href="https://prak05.github.io/prak05/" target="_blank">
-  <img src="https://img.shields.io/badge/🌐_LIVE_PORTFOLIO-prak05.github.io%2Fprak05-D4FF00?style=for-the-badge&logo=googlechrome&logoColor=000000&labelColor=050505" height="38" alt="Live Portfolio Website" />
-</a>
-&nbsp;
-<a href="https://prak05.github.io/prak05/" target="_blank">
-  <img src="https://img.shields.io/badge/⚡_INTERACTIVE_UI-LAUNCH_SYSTEM-00F0FF?style=for-the-badge&logo=safari&logoColor=000000&labelColor=050505" height="38" alt="Interactive System Demo" />
+<!-- 00 / HERO CINEMATIC BANNER -->
+<a href="https://prak05.github.io/prak05/">
+  <img src="assets/hero.svg" width="100%" alt="Prakhar Sharma — Cinematic Action Poster &amp; Systems Architecture Portfolio" />
 </a>
 
 <br/><br/>
 
+<!-- TOP INTERACTIVE LAUNCH PADS -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=D4FF00&center=true&vCenter=true&width=700&lines=Cloud-Native+Distributed+Systems;Enterprise+RAG+%26+Generative+AI+Architectures;AWS+Student+Builder+Group+Leader+(SBGL);Google+Gemini+Student+Ambassador+(GSA)" alt="Typing SVG" />
+  <a href="https://prak05.github.io/prak05/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐_ENTER_LIVE_PORTFOLIO-prak05.github.io%2Fprak05-FF002D?style=for-the-badge&logo=safari&logoColor=white&labelColor=171717" height="38" alt="Live Portfolio Website" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/prak05?tab=repositories">
+    <img src="https://img.shields.io/badge/⚡_EXPLORE_REPOSITORIES-45+_SYSTEMS-FF002D?style=for-the-badge&logo=github&logoColor=white&labelColor=171717" height="38" alt="GitHub Repositories" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="mailto:prakharsx05@gmail.com">
+    <img src="https://img.shields.io/badge/✉_INITIALIZE_DISPATCH-prakharsx05%40gmail.com-171717?style=for-the-badge&logo=gmail&logoColor=FF002D&labelColor=171717" height="38" alt="Contact Email" />
+  </a>
 </p>
-
-[![Profile Views](https://komarev.com/ghpvc/?username=prak05&label=PROFILE+VIEWS&color=D4FF00&style=for-the-badge)](https://github.com/prak05)
-[![AWS Architecture](https://img.shields.io/badge/AWS-Certified_Cloud_Architecture-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](#-flagship-cloud--ai-architectures)
-[![Email](https://img.shields.io/badge/Email-prakharsx05%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:prakharsx05@gmail.com)
-
 
 </div>
 
 ---
 
-### 💻 Active Node HUD & Identity Matrix
+<!-- 01 / IDEAS. BUILT DIFFERENT. -->
+<div align="center">
+  <img src="assets/ideas_terminal.svg" width="100%" alt="01 / IDEAS. BUILT DIFFERENT. — Terminal Execution Log" />
+</div>
 
-```yaml
-Operator       : Prakhar Sharma (AICTE ID: STU6633bf927609d1714667410)
-Primary Mesh   : AWS (Amazon Bedrock, SageMaker, ECS Fargate, IoT Core, S3, DynamoDB)
-AI/ML Core     : Anthropic Claude 3.5 Sonnet, LangChain, FastMCP 2.0, PyTorch, LightGBM, XGBoost
-Vector Storage : Amazon OpenSearch Serverless, ChromaDB, PGVector
-Communities    : AWS Student Builder Group Leader (SBGL) • Google Gemini Student Ambassador (GSA)
-Leadership     : MuLearn Alumni Cell Lead (600+ Engineers) • Founder, Vidya Sadhnam (300+ Students)
-Honors         : IEEE Techventure 2.0 Debate Winner • IEEE I5 Certified • Classical Veena Musician
-Architecture   : Event-Driven Serverless, Dual-Branch Safety (Ex / main), Microservices
-```
+<br/>
+
+<!-- 02 / MORE THAN A JOB TITLE. -->
+<div align="center">
+  <img src="assets/more_than_title.svg" width="100%" alt="02 / MORE THAN A JOB TITLE. — Strategic Framework &amp; Mentorship" />
+</div>
+
+<br/>
+
+<!-- 03 / MY ENGINE ROOM -->
+<div align="center">
+  <img src="assets/orbit_engine.svg" width="100%" alt="03 / MY ENGINE ROOM — Orbit Architecture &amp; Technology Stack" />
+</div>
+
+<br/>
 
 ---
 
-## 🚀 Flagship Systems & Cloud Showcases
+<!-- 05 / SELECTED ENGINEERING (THINGS I'VE BUILT) -->
+<div align="center">
+  <h2>⚡ THINGS I'VE BUILT // SELECTED ENGINEERING</h2>
+  <p><sub>Mission-critical distributed architectures, clinician-first RAG engines, and predictive ML systems.</sub></p>
+</div>
 
-<table width="100%">
+<table width="100%" border="0" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr bgcolor="#252323">
+      <th align="left" width="28%"><font color="#F5F2F0">PROJECT</font></th>
+      <th align="left" width="52%"><font color="#F5F2F0">WHAT IT DOES // TECHNICAL ARCHITECTURE</font></th>
+      <th align="center" width="20%"><font color="#FF002D">FOCUS</font></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr bgcolor="#1b1b1b">
+      <td valign="top">
+        <b><a href="https://github.com/prak05/OmniPrice-ML-Engine"><font color="#FF002D">OmniPrice ML Engine</font></a></b><br/>
+        <sub>Autonomous Pricing Forecasting</sub>
+      </td>
+      <td valign="top">
+        High-dimensional price elasticity and revenue forecasting engine with sub-40ms P99 inference. Distributed feature store on AWS S3 &amp; SageMaker Serverless.
+      </td>
+      <td align="center" valign="middle">
+        <code><font color="#FF002D">MLOps / Cloud</font></code>
+      </td>
+    </tr>
+    <tr bgcolor="#202020">
+      <td valign="top">
+        <b><a href="https://github.com/prak05/MediScribe-AI-Platform"><font color="#FF002D">MediScribe AI Platform</font></a></b><br/>
+        <sub>Ambient Clinical Scribe</sub>
+      </td>
+      <td valign="top">
+        Speech-to-EHR transcription pipeline generating structured SOAP notes with zero hallucination. Integrated with AWS Transcribe Medical &amp; Claude 3.5 Sonnet.
+      </td>
+      <td align="center" valign="middle">
+        <code><font color="#FF002D">Clinical GenAI</font></code>
+      </td>
+    </tr>
+    <tr bgcolor="#1b1b1b">
+      <td valign="top">
+        <b><a href="https://github.com/prak05/MedBuddy-Clinical-RAG"><font color="#FF002D">MedBuddy Clinical RAG</font></a></b><br/>
+        <sub>UST SIGHT 3.0 &amp; Ideathon Winner</sub>
+      </td>
+      <td valign="top">
+        Hybrid dense + BM25 medical guideline retrieval platform. Honored at <b>Gravity | IEDC-MCET Ideathon</b> and nationally recognized at <b>UST SIGHT 3.0</b>.
+      </td>
+      <td align="center" valign="middle">
+        <code><font color="#FF002D">Hybrid RAG</font></code>
+      </td>
+    </tr>
+    <tr bgcolor="#202020">
+      <td valign="top">
+        <b><a href="https://github.com/prak05/AgriSmart-Precision-Irrigation"><font color="#FF002D">Agri-Smart Pro</font></a></b><br/>
+        <sub>National Top 1.1% Finalist</sub>
+      </td>
+      <td valign="top">
+        Multi-parcel automated irrigation system using <code>MultiOutputClassifier</code> (RandomForest). Selected in national <b>Top 40 out of 3,668 teams</b> (AICTE / Shell India).
+      </td>
+      <td align="center" valign="middle">
+        <code><font color="#FF002D">IoT &amp; Predictive ML</font></code>
+      </td>
+    </tr>
+    <tr bgcolor="#1b1b1b">
+      <td valign="top">
+        <b><a href="https://github.com/prak05/EDUNET-AI-CLOUD-FASAL-SAARTHU-KUSHAL-KISAN"><font color="#FF002D">Fasal Saarthi: Kushal Kisan</font></a></b><br/>
+        <sub>IBM Watsonx AutoAI Platform</sub>
+      </td>
+      <td valign="top">
+        7-parameter crop recommendation engine (N, P, K, pH, temp, humidity, rainfall) with 95%+ confidence. Multi-language REST endpoints (Python, Java, JS).
+      </td>
+      <td align="center" valign="middle">
+        <code><font color="#FF002D">AutoAI / Cloud</font></code>
+      </td>
+    </tr>
+    <tr bgcolor="#202020">
+      <td valign="top">
+        <b><a href="https://github.com/prak05/KSERC"><font color="#FF002D">KSERC Regulatory Audit Tool</font></a></b><br/>
+        <sub>Govt. Statutory Tariff Engine</sub>
+      </td>
+      <td valign="top">
+        Formal MoU research initiative with Kerala State Electricity Regulatory Commission automating multi-year petition truing-up using Textract and Bedrock.
+      </td>
+      <td align="center" valign="middle">
+        <code><font color="#FF002D">GovTech / NLP</font></code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+---
+
+<!-- 04 / BUILDER CREDENTIALS & REAL WORK -->
+<table width="100%" border="0" cellspacing="0" cellpadding="8">
   <tr>
-    <td width="50%" valign="top">
-      <h3>📈 <a href="https://github.com/prak05/OmniPrice-ML-Engine">OmniPrice ML Engine</a></h3>
-      <p>Autonomous pricing elasticity and revenue forecasting engine trained on high-dimensional catalog data.</p>
-      <b>AWS Stack:</b> <code>SageMaker Serverless</code> • <code>S3 Lake</code> • <code>Glue ETL</code> • <code>Lambda</code><br>
-      <b>Core:</b> <code>LightGBM</code> • <code>XGBoost</code> • <code>PySpark</code> • <code>FastAPI</code> (38ms P99)
+    <td width="42%" valign="top">
+      <img src="assets/builder_badge.svg" width="100%" alt="04 / BUILDER CREDENTIALS — Verified Identity Badge" />
     </td>
-    <td width="50%" valign="top">
-      <h3>🩺 <a href="https://github.com/prak05/MediScribe-AI-Platform">MediScribe AI Platform</a></h3>
-      <p>Ambient clinical speech-to-EHR transcription and automated SOAP note generation with zero hallucination.</p>
-      <b>AWS Stack:</b> <code>Transcribe Medical</code> • <code>Bedrock Claude 3.5</code> • <code>DynamoDB</code> • <code>KMS</code><br>
-      <b>Core:</b> <code>FastMCP 2.0</code> • <code>Python</code> • <code>WeasyPrint</code> • <code>Next.js</code>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🛡️ <a href="https://github.com/prak05/MedBuddy-Clinical-RAG">MedBuddy Clinical RAG</a></h3>
-      <p>Grounded medical decision support leveraging hybrid dense and BM25 retrieval over clinical guidelines.</p>
-      <b>AWS Stack:</b> <code>Bedrock Mantle</code> • <code>OpenSearch Serverless</code> • <code>ECS Fargate</code><br>
-      <b>Core:</b> <code>LangChain</code> • <code>Titan Embeddings V2</code> • <code>FastAPI</code>
-    </td>
-    <td width="50%" valign="top">
-      <h3>👁️ <a href="https://github.com/prak05/RetinaScan-Diagnostic-AI">RetinaScan Diagnostic AI</a></h3>
-      <p>Deep learning fundus imaging analysis detecting diabetic retinopathy and macular lesions in real time.</p>
-      <b>AWS Stack:</b> <code>SageMaker CV</code> • <code>S3 Vault</code> • <code>Cognito</code> • <code>ECS Fargate</code><br>
-      <b>Core:</b> <code>PyTorch ResNet</code> • <code>Flutter Mobile</code> • <code>Vite Web</code> • <code>TruLens</code>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>⚡ <a href="https://github.com/prak05/KSERC">KSERC Regulatory Engine</a></h3>
-      <p>AI financial truing-up audit engine built for the Kerala State Electricity Regulatory Commission.</p>
-      <b>AWS Stack:</b> <code>Amazon Textract</code> • <code>Bedrock Claude</code> • <code>DynamoDB</code> • <code>Terraform</code><br>
-      <b>Core:</b> <code>Table Extractor</code> • <code>BM25 Retrieval</code> • <code>Linear-Style UI</code>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🌱 <a href="https://github.com/prak05/AgriSmart-Precision-Irrigation">AgriSmart Precision Irrigation</a></h3>
-      <p>IoT-driven agronomic telemetry ingestion and automated 24-hr predictive soil water valve actuation.</p>
-      <b>AWS Stack:</b> <code>AWS IoT Core (MQTT)</code> • <code>Kinesis Firehose</code> • <code>S3 Time-Series</code> • <code>SNS</code><br>
-      <b>Core:</b> <code>Random Forest</code> • <code>Scikit-Learn</code> • <code>Streamlit</code>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>⏱️ <a href="https://github.com/prak05/OptiSchedule-RCPSP-AI">OptiSchedule RCPSP AI</a></h3>
-      <p>High-throughput combinatorial optimization engine solving Resource-Constrained Project Scheduling.</p>
-      <b>AWS Stack:</b> <code>AWS Batch Compute</code> • <code>S3 Scenarios</code> • <code>DynamoDB State</code><br>
-      <b>Core:</b> <code>Genetic Algorithms</code> • <code>Neural Control</code> • <code>Interactive Gantt</code>
-    </td>
-    <td width="50%" valign="top">
-      <h3>👤 <a href="https://github.com/prak05/VisagePass-Biometric-Attendance">VisagePass Biometric Attendance</a></h3>
-      <p>Edge computer vision attendance verification engine using 128D Euclidean hypersphere metric vectors.</p>
-      <b>AWS Stack:</b> <code>AWS Rekognition</code> • <code>S3 Vault</code> • <code>DynamoDB</code> • <code>ECS Fargate</code><br>
-      <b>Core:</b> <code>OpenCV</code> • <code>Dlib 128D</code> • <code>Flask</code> • <code>Anti-Spoofing</code>
+    <td width="58%" valign="top">
+      <img src="assets/stats.svg" width="100%" alt="04 / METRICS MATRIX — Real Work. Real Impact." />
     </td>
   </tr>
 </table>
 
----
-
-## 💼 Industry Experience & Practice
-
-* ⚡ **Kerala State Electricity Regulatory Commission (KSERC)** *(2026)*: Built the AI Regulatory Truing-Up Tool automating tariff petition financial audits with Amazon Textract and Bedrock Mantle.
-* 📊 **AND Intern** *(June – Aug 2024)*: Engineered fraud detection and valuation forecasting machine learning models using Scikit-Learn and imblearn.
-* ☁️ **Edunet Foundation / IBM SkillsBuild / AICTE** *(Aug – Dec 2024)*: AI Cloud & Frontend Developer Intern — developed Fasal Saarthi crop advisor and AgriSmart irrigation platforms.
-* 🛡️ **Innovate Intern** *(Nov 2024)*: Cloud Computing Intern (GCP) — designed secure cloud architectures for AI/ML workloads.
-* 📱 **VirtuNexa** *(Jan 2025)*: Android Developer Intern contributing to production mobile modules.
+<br/>
 
 ---
 
-## 🏛️ Community Leadership & Distinctions
-
-* 🚀 **AWS Student Builder Group Leader (SBGL)**: Directed the 4-day CloudCraft GenAI bootcamp onboarding 150+ engineers to AWS cloud infrastructure.
-* 🌟 **Google Gemini Student Ambassador (GSA)**: Selected ambassador representing Google's multimodal AI technologies.
-* 🤝 **MuLearn Alumni Cell Lead**: Managed 600+ engineers across Kerala for peer-led growth and technical bootcamps.
-* 🎓 **Founder, Vidya Sadhnam**: Grew community from 0 to 300+ direct student reach across multiple hands-on workshops.
-* 🏆 **IEEE Techventure 2.0 Debate Winner** *(April 2026)* & **IEEE I5 Certified** in innovation-focused engineering.
-* 🎶 **Classical Indian Veena Musician**: High-profile performances including for the Chief of Western Air Command.
-
----
-
-## 🛠️ Clustered Toolchain & Competencies
-
+<!-- VERIFIED FIELD LEADERSHIP & HONORS -->
 <div align="center">
-
-### Cloud & DevOps
-<img src="https://skillicons.dev/icons?i=aws,docker,terraform,linux,bash,nginx,githubactions&theme=dark" alt="Cloud Stack" />
-
-### AI & Machine Learning
-<img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,scikitlearn,fastapi&theme=dark" alt="AI/ML Stack" />
-
-### Fullstack & Distributed Systems
-<img src="https://skillicons.dev/icons?i=ts,react,nextjs,nodejs,tailwind,c,cpp&theme=dark" alt="Fullstack Stack" />
-
-### Databases & Persistence
-<img src="https://skillicons.dev/icons?i=postgres,dynamodb,redis,mongodb,sqlite&theme=dark" alt="Database Stack" />
-
+  <h2>🏛️ VERIFIED FIELD JOURNEY &amp; INSTITUTIONAL IMPACT</h2>
 </div>
 
----
+<table width="100%" border="0" cellspacing="0" cellpadding="10">
+  <tr bgcolor="#252323">
+    <td width="50%" valign="top">
+      <h3>⚡ Professional &amp; Statutory Appointments</h3>
+      <ul>
+        <li><b>Kerala State Electricity Regulatory Commission (KSERC)</b>: Appointed intern under signed MoU between KSERC Board and RIET. Built the automated truing-up financial audit tool.</li>
+        <li><b>MuLearn Foundation</b>: Partner Engagement Intern driving strategic student developer ecosystems and state-wide network initiatives.</li>
+        <li><b>Alumni Cell Lead, µLearn RIET</b>: Directing mentorship pipelines connecting 600+ engineers with industry veterans across Kerala.</li>
+        <li><b>AWS Student Builder Group Leader (SBGL)</b>: Directed the 4-day CloudCraft GenAI bootcamp onboarding 150+ engineers to AWS.</li>
+        <li><b>Edunet Foundation / IBM SkillsBuild / AICTE</b>: AI Cloud Developer Intern for Fasal Saarthi and AgriSmart Pro.</li>
+        <li><b>VirtuNexa &amp; AND Intern</b>: Mobile application systems &amp; ML fraud detection models.</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🏆 Distinctions, Summits &amp; Alliances</h3>
+      <ul>
+        <li><b>IEEE Techventure 2.0 Debate Winner</b>: Champion at IEEE CS SBC LBSITW alongside Akhil Kv &amp; Adithya Baiju.</li>
+        <li><b>Gravity | IEDC-MCET Cluster Ideathon</b>: 1st Place for MedBuddy Healthcare AI Assistant.</li>
+        <li><b>National Top 1.1% Finalist</b>: Ranked in Top 40 out of 3,668 developers in AICTE-Shell India Skills4Future.</li>
+        <li><b>UST SIGHT 3.0 National Showcase</b>: Advanced MediScribe AI to national healthcare innovation expo.</li>
+        <li><b>Vidya Sadhnam Developer Culture</b>: Founder of campus initiative running high-intensity sprints (<i>GitHub Geeks</i> &amp; <i>Data Manipulators</i>).</li>
+        <li><b>Classical Veena Musician</b>: Performed for the Chief of Western Air Command; guided by discipline, adaptability and duty-driven action.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-## 📊 Live GitHub Engineering Metrics
+<br/>
 
+<!-- 05 / START A CONVERSATION -->
 <div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=prak05&show_icons=true&theme=tokyonight&hide_border=true&bg_color=080808&title_color=D4FF00&icon_color=00F0FF&text_color=E4E4E7" alt="GitHub Stats" width="48%" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=prak05&layout=compact&theme=tokyonight&hide_border=true&bg_color=080808&title_color=D4FF00&text_color=E4E4E7" alt="Top Languages" width="48%" />
-
-<br>
-
-<img src="https://streak-stats.demolab.com/?user=prak05&theme=tokyonight&hide_border=true&background=080808&ring=D4FF00&fire=00F0FF&currStreakLabel=D4FF00" alt="Streak Stats" width="97%" />
-
+  <a href="https://prak05.github.io/prak05/">
+    <img src="assets/conversation.svg" width="100%" alt="05 / START A CONVERSATION — Build Something Great" />
+  </a>
 </div>
 
+<br/>
+
 ---
 
+<!-- 06 / FOOTER -->
 <div align="center">
-
-### 🤝 Initialize Connection
 
 <p>
-  <a href="mailto:prakharsx05@gmail.com"><img src="https://img.shields.io/badge/Email-prakharsx05%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  &nbsp;
-  <a href="https://linkedin.com"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  &nbsp;
-  <a href="https://github.com/prak05"><img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+  <sub>
+    <b>PRAKHAR SHARMA</b> • Operating from Kerala, India • B.Tech CSE Class of 2027 • 
+    <a href="https://prak05.github.io/prak05/"><font color="#FF002D">Live Web Portfolio</font></a> • 
+    <a href="https://github.com/prak05"><font color="#FF002D">GitHub</font></a> • 
+    <a href="mailto:prakharsx05@gmail.com"><font color="#FF002D">Email</font></a>
+  </sub>
 </p>
 
-<sub>Architected with extreme precision • Engineered for scalable production clouds</sub>
+<sub>Architected with extreme precision • Powered by Dark Charcoal &amp; Hot Red Editorial Bento • Safe Dual-Branch Mesh (Ex / main)</sub>
 
 </div>

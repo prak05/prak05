@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 440" width="100%" height="100%">
+  <defs>
+    <linearGradient id="termGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#252323" />
+      <stop offset="100%" stop-color="#1a1818" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#FF002D" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <style>
+    .mono { font-family: 'JetBrains Mono', 'Space Mono', 'Courier New', monospace; }
+    .sans { font-family: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif; }
+    .tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+  </style>
+
+  <!-- Container Box -->
+  <rect width="1100" height="440" rx="16" fill="#1b1b1b" stroke="#393434" stroke-width="1.5" />
+
+  <!-- Section Label -->
+  <text x="45" y="48" class="mono tag" fill="#FF002D">01 / IDEAS. BUILT DIFFERENT.</text>
+  <text x="1055" y="48" text-anchor="end" class="mono tag" fill="#A5A5A5">/// SYSTEM LOG</text>
+
+  <!-- Terminal Window -->
+  <g transform="translate(45, 70)">
+    <!-- Terminal Shell -->
+    <rect width="1010" height="150" rx="12" fill="url(#termGrad)" stroke="#393434" stroke-width="1.5" />
+
+    <!-- Top Window Bar -->
+    <rect width="1010" height="34" rx="12" fill="#202020" />
+    <path d="M 0 22 L 0 34 L 1010 34 L 1010 22 Z" fill="#202020" />
+    <line x1="0" y1="34" x2="1010" y2="34" stroke="#393434" stroke-width="1" />
+
+    <!-- Terminal Controls -->
+    <circle cx="22" cy="17" r="5" fill="#FF002D" />
+    <circle cx="38" cy="17" r="5" fill="#514347" />
+    <circle cx="54" cy="17" r="5" fill="#393434" />
+    <text x="80" y="22" class="mono" font-size="11" fill="#A5A5A5">prak05@kernel:~/engine/production</text>
+
+    <!-- Animated Command & Typing -->
+    <g transform="translate(25, 75)">
+      <text class="mono" font-size="15" fill="#A5A5A5">prak05@system:~$ </text>
+      <text x="145" y="0" class="mono" font-size="15" font-weight="600" fill="#F5F2F0">
+        &gt; turn_curiosity_into_impact()
+      </text>
+      <!-- Blinking Cursor -->
+      <rect x="415" y="-14" width="9" height="18" fill="#FF002D">
+        <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite" />
+      </rect>
+
+      <text x="0" y="40" class="mono" font-size="13" fill="#FF002D">[DEPLOYED]</text>
+      <text x="95" y="40" class="mono" font-size="13" fill="#D8D5D3">
+        Engine online: Event-Driven Serverless, Hybrid Clinical RAG &amp; Dual-Branch Safety (Ex / main)
+      </text>
+    </g>
+  </g>
+
+  <!-- 3 Numbered Milestone Boxes: 01 IDEATE, 02 ENGINEER, 03 SHIP -->
+  <g transform="translate(45, 245)">
+    <!-- 01 IDEATE -->
+    <g transform="translate(0, 0)">
+      <rect width="315" height="65" rx="10" fill="#252323" stroke="#393434" stroke-width="1.5" />
+      <text x="20" y="38" class="mono" font-size="20" font-weight="800" fill="#8F8F8F">01</text>
+      <text x="55" y="32" class="sans" font-size="13" font-weight="700" fill="#F5F2F0" letter-spacing="1">IDEATE</text>
+      <text x="55" y="48" class="mono" font-size="10" fill="#A5A5A5">Identify systemic gaps</text>
+    </g>
+
+    <!-- 02 ENGINEER -->
+    <g transform="translate(347, 0)">
+      <rect width="315" height="65" rx="10" fill="#252323" stroke="#393434" stroke-width="1.5" />
+      <text x="20" y="38" class="mono" font-size="20" font-weight="800" fill="#8F8F8F">02</text>
+      <text x="55" y="32" class="sans" font-size="13" font-weight="700" fill="#F5F2F0" letter-spacing="1">ENGINEER</text>
+      <text x="55" y="48" class="mono" font-size="10" fill="#A5A5A5">Architect decoupled clouds</text>
+    </g>
+
+    <!-- 03 SHIP (Highlighted Red) -->
+    <g transform="translate(695, 0)" filter="url(#softGlow)">
+      <rect width="315" height="65" rx="10" fill="#252323" stroke="#FF002D" stroke-width="2" />
+      <text x="20" y="38" class="mono" font-size="20" font-weight="800" fill="#FF002D">03</text>
+      <text x="55" y="32" class="sans" font-size="13" font-weight="700" fill="#FF002D" letter-spacing="1">SHIP &amp; SCALE</text>
+      <text x="55" y="48" class="mono" font-size="10" fill="#F5F2F0">Production-ready impact</text>
+    </g>
+  </g>
+
+  <!-- 3 Skill Area Rows -->
+  <g transform="translate(45, 335)">
+    <!-- Row 1 -->
+    <g transform="translate(0, 0)">
+      <circle cx="12" cy="12" r="6" fill="#FF002D" />
+      <text x="28" y="16" class="sans" font-size="13" font-weight="700" fill="#F5F2F0">Cloud-Native Distributed Systems</text>
+      <text x="28" y="34" class="sans" font-size="11" fill="#A5A5A5">AWS ECS Fargate, SageMaker Serverless, DynamoDB, resilient event-driven microservices</text>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(360, 0)">
+      <circle cx="12" cy="12" r="6" fill="#FF002D" />
+      <text x="28" y="16" class="sans" font-size="13" font-weight="700" fill="#F5F2F0">Enterprise RAG &amp; Generative AI</text>
+      <text x="28" y="34" class="sans" font-size="11" fill="#A5A5A5">Dense + BM25 hybrid retrieval, FastMCP 2.0 protocol, zero-hallucination clinical pipelines</text>
+    </g>
+
+    <!-- Row 3 -->
+    <g transform="translate(730, 0)">
+      <circle cx="12" cy="12" r="6" fill="#FF002D" />
+      <text x="28" y="16" class="sans" font-size="13" font-weight="700" fill="#F5F2F0">Strategic Community Architecture</text>
+      <text x="28" y="34" class="sans" font-size="11" fill="#A5A5A5">Founder of Vidya Sadhnam, MuLearn Alumni Cell Lead (600+ engineers), AWS SBGL Lead</text>
+    </g>
+  </g>
+</svg>
