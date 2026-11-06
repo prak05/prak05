@@ -43,3 +43,5 @@ AI & Machine Learning : LangChain, FastMCP, Vector DBs (OpenSearch, ChromaDB), X
 Fullstack & Backend: Python (FastAPI, Flask), TypeScript, React, Next.js, Node.js, REST & WebSockets, SQL
 System Design      : Microservices, Event-Driven Architecture, Dual-Branch Safety (Ex / Main), HIPAA / KMS Security
 ```
+
+<!-- antigravity-certified -->
