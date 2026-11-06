@@ -4,6 +4,18 @@
 ### Cloud-Native Systems Engineer & AI Systems Architect
 **APJ Abdul Kalam Technological University (KTU) • B.Tech Computer Science & Engineering**
 
+<br/>
+
+<a href="https://prak05.github.io/prak05/" target="_blank">
+  <img src="https://img.shields.io/badge/🌐_LIVE_PORTFOLIO-prak05.github.io%2Fprak05-D4FF00?style=for-the-badge&logo=googlechrome&logoColor=000000&labelColor=050505" height="38" alt="Live Portfolio Website" />
+</a>
+&nbsp;
+<a href="https://prak05.github.io/prak05/" target="_blank">
+  <img src="https://img.shields.io/badge/⚡_INTERACTIVE_UI-LAUNCH_SYSTEM-00F0FF?style=for-the-badge&logo=safari&logoColor=000000&labelColor=050505" height="38" alt="Interactive System Demo" />
+</a>
+
+<br/><br/>
+
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=D4FF00&center=true&vCenter=true&width=700&lines=Cloud-Native+Distributed+Systems;Enterprise+RAG+%26+Generative+AI+Architectures;AWS+Student+Builder+Group+Leader+(SBGL);Google+Gemini+Student+Ambassador+(GSA)" alt="Typing SVG" />
 </p>
