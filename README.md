@@ -11,7 +11,7 @@
 [![Profile Views](https://komarev.com/ghpvc/?username=prak05&label=PROFILE+VIEWS&color=D4FF00&style=for-the-badge)](https://github.com/prak05)
 [![AWS Architecture](https://img.shields.io/badge/AWS-Certified_Cloud_Architecture-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](#-flagship-cloud--ai-architectures)
 [![Email](https://img.shields.io/badge/Email-prakharsx05%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:prakharsx05@gmail.com)
-[![Phone](https://img.shields.io/badge/Phone-%2B91_7994454919-22C55E?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/917994454919)
+
 
 </div>
 
